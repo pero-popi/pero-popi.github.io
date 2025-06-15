@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AWS SAA 用語集</title>
+  <meta name="description" content="AWS Certified Solutions Architect - Associate の用語集">
+  <link rel="shortcut icon" type="image/x-icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;700" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Noto Sans JP", "YuGothic","游ゴシック","Noto Sans JP","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","メイリオ","Meiryo",sans-serif;
+    }
+    .container {
+      max-width: 1280px;
+      min-width: 320px;
+      margin: 0 auto;
+      padding: 80px 80px 120px;
+      box-sizing: border-box;
+    }
+    .inner {
+      display: flex;
+      flex-direction: column;
+      gap: 50px 0;
+    }
+    @media (max-width: 960px) {
+      .container {
+        padding: 20px 20px 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>AWS 用語集</h1>
+    <div class="inner">
+
+      <list-definition term="ソリューションアーキテクト">
+        <li slot="description">顧客のビジネス課題解決のために、ITシステムの設計や構成を提案し、システムを構築する役割を担うエンジニアのこと。</li>
+        <li slot="description">顧客のニーズを理解し、技術的な側面とビジネス的な側面の両方を考慮してソリューションを設計・提案し、実装や運用にも関与することがある。</li>
+      </list-definition>
+
+      <list-definition term="AWS Well-Architected">
+        <li slot="description">AWSクラウドの設計を最適化するためのガイドライン、AWSが提供するクラウドサービスのベストプラクティス集。</li>
+        <li slot="description">運用上の優秀性、セキュリティ、信頼性、パフォーマンス効率、コスト最適化、持続可能性の6つの柱がある。</li>
+      </list-definition>
+
+      <list-definition term="AWS AZ">
+        <span slot="name">AWS アベイラビリティーゾーン</span>
+        <li slot="description">AWSリージョン内にある、互いに独立したデータセンター群。電力、ネットワーク、接続が冗長化されており、あるAZが故障しても他のAZでサービスを継続できるように設計されている。</li>
+        <li slot="description">AZは、広域災害や障害からの影響を最小限に抑えるために、物理的に離れた場所に配置されている。</li>
+      </list-definition>
+
+      <list-definition term="サブネット">
+        <li slot="description">パブリックサブネットには、インターネットゲートウェイへの経路が追加されているため、インターネットへの送受信が可能。</li>
+        <li slot="description">プライベートサブネットには、インターネットゲートウェイへの経路が追加されていないため、インターネットへの直接アクセスはできない。</li>
+      </list-definition>
+
+      <list-definition term="責任共有モデル">
+        <li slot="description">AWSはクラウド環境のセキュリティを含む仮想化インフラストラクチャの保護に責任を負う。</li>
+        <li slot="description">他方、利用者は、自身のデータ、プラットフォームアクセスの管理、OSとアプリケーションなどのゲスト環境に対して責任がある。</li>
+      </list-definition>
+
+      <list-definition term="AWS VPC">
+        <span slot="name">AWS Virtual Private Cloud</span>
+        <li slot="description">AWS上で仮想的なネットワークを構築・制御するためのサービス。</li>
+        <li slot="description">パブリックなインターネットと分離された、独自のネットワーク環境を構築できる。</li>
+      </list-definition>
+
+      <list-definition term="AWS VPN">
+        <span slot="name">Amazon Virtual Private Cloud</span>
+        <li slot="description">AWS上で仮想プライベートネットワークを構築し、社内ネットワークや自宅など、どこからでもAWS上のリソースに安全にアクセスできるようにするサービス。</li>
+        <li slot="description">具体的には、オンプレミス環境とAWSのVPCを接続する (AWS Site-to-Site VPN) と、個々のクライアント端末からAWSにアクセスする (AWS Client VPN) の2種類がある。</li>
+      </list-definition>
+
+      <list-definition term="AWS VPN CloudHub">
+        <span slot="name">Amazon Virtual Private Cloud CloudHub</span>
+        <li slot="description">AWS環境に接続する拠点が複数ある場合に、各拠点間のVPN接続を効率的に管理するためのAWSサービス。</li>
+        <li slot="description">各拠点とAWS間のSite-to-Site VPNを、VPN CloudHubを使用することで、安全な拠点間通信を確立できる。</li>
+      </list-definition>
+
+      <list-definition term="AWS IAM">
+        <span slot="name">AWS Identity and Access Management</span>
+        <li slot="description">AWSのリソースへのアクセスを安全に制御するためのサービス。</li>
+        <li slot="description">ユーザー、グループ、ロール、ポリシーを管理し、誰がどのリソースにアクセスできるかを細かく制御できる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon ElastiCache">
+        <li slot="description">フルマネージド型インメモリキャッシュサービスで、アクセスの高速化のためのキャッシュレイヤー。</li>
+        <li slot="description">ウェブアプリケーションのパフォーマンス向上、データベースへの負荷軽減、高速なデータアクセスを実現する。</li>
+      </list-definition>
+
+      <list-definition term="Amazon ElastiCache for Memcached">
+        <li slot="description">フルマネージドのインメモリキーバリューストアサービスで、Memcached互換のキャッシュエンジンを使用。</li>
+      </list-definition>
+
+      <list-definition term="Amazon ElastiCache for Redis">
+        <li slot="description">フルマネージドのインメモリキャッシュサービスで、Redis互換のキャッシュエンジンを使用。</li>
+      </list-definition>
+
+      <list-definition term="Amazon DynamoDB">
+        <li slot="description">フルマネージドNoSQLデータベースサービス。</li>
+        <li slot="description">自動スケーリング機能、高速で柔軟なデータベースとして、大規模なデータセットと高いスケーラビリティが求められるアプリケーション向け。</li>
+      </list-definition>
+
+      <list-definition term="Amazon DAX">
+        <span slot="name">Amazon DynamoDB Accelerator</span>
+        <li slot="description">DynamoDBのインメモリキャッシングサービス。</li>
+        <li slot="description">DAXを使用すると、DynamoDBへの読み取り要求を高速化できる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon S3">
+        <span slot="name">Amazon Simple Storage Service</span>
+        <li slot="description">オブジェクトストレージサービス。ファイルや画像をインターネットに保存したり、バックアップやアーカイブに利用したり、ウェブサイトの静的コンテンツをホストしたりするなど、様々な用途で利用。</li>
+        <li slot="description">低コストで利用でき、高い耐久性・可用性があり、無制限のストレージ容量が利用できる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon S3 Data Lake">
+        <li slot="description">Amazon S3を基盤としたデータレイク。データレイクとは、構造化データ、非構造化データなど、あらゆる形式のデータを一元的に保存・管理するリポジトリのこと。</li>
+        <li slot="description">S3をデータレイクとして活用することで、大量のデータをコスト効率よく保存し、様々な分析や機械学習に活用できる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon S3 File Gateway">
+        <li slot="description">オンプレミス環境のファイルサーバーをAmazon S3に接続し、ファイル共有 (SMB/NFS) を介してS3にデータを保存できるようにするサービス。</li>
+      </list-definition>
+
+      <list-definition term="Amazon S3 Transfer Acceleration">
+        <li slot="description">AWSのS3バケットへのデータ転送を高速化するための機能。</li>
+        <li slot="description">特に、遠隔地からS3にデータをアップロードする際に、CloudFrontのエッジロケーションを活用することで、転送速度を向上できる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Aurora">
+        <li slot="description">リレーショナルデータベースサービスで、MySQLおよびPostgreSQLと互換性のあるデータベースエンジン。</li>
+        <li slot="description">商用データベースの性能とオープンソースデータベースのコスト効率を兼ね備え、クラウドに最適化された設計。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Aurora Replica">
+        <li slot="description">Amazon Auroraデータベースの読み取り専用のレプリカ。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Aurora Serverless">
+        <li slot="description">Amazon Aurora互換のリレーショナルデータベースで、自動的にスケーリングする完全マネージド型のサービス。</li>
+        <li slot="description">ワークロードの変動に合わせて自動的にクラスターのキャパシティを拡張・縮小するため、トラフィックの増減に柔軟に対応できる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon EBS">
+        <span slot="name">Amazon Elastic Block Store</span>
+        <li slot="description">ブロックストレージサービス。EC2インスタンスにアタッチして、仮想ディスクとして利用できるストレージ。</li>
+        <li slot="description">EC2に永続的なストレージを提供することで、インスタンスが停止してもデータを保持できる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon EC2">
+        <span slot="name">Amazon Elastic Compute Cloud</span>
+        <li slot="description">AWSのクラウド上に仮想サーバーを構築できるサービス。</li>
+        <li slot="description">仮想サーバー構築サービスであり、AWS上でWebアプリケーションやデータベースなどを動かすための基盤を提供する。</li>
+      </list-definition>
+
+      <list-definition term="AMI">
+        <span slot="name">Amazon Machine Image</span>
+        <li slot="description">EC2インスタンスを起動する際に使用されるテンプレート。</li>
+        <li slot="description">OSやアプリケーション、設定、データなどが含まれており、EC2インスタンスの迅速なデプロイやバックアップに役立つ。</li>
+      </list-definition>
+
+      <list-definition term="Amazon EC2 dedicated hosts">
+        <span slot="name">デディケイテッド ホスツ</span>
+        <li slot="description">専用ホスト。ソフトウェアライセンスの利用を維持しながらクラウドに移行するのに最適なソリューション。</li>
+        <li slot="description">ホスト単位でサーバーリソースを完全に専有できる仮想マシン環境を提供する。</li>
+      </list-definition>
+
+      <list-definition term="EC2インスタンスのフリート">
+        <li slot="description">フリートは、1つのAPIで複数のインスタンスを起動、管理し、コスト最適化やキャパシティの柔軟な調整を可能にする機能。</li>
+        <li slot="description">オンデマンドインスタンス、リザーブドインスタンス、スポットインスタンスなど、異なるタイプのEC2インスタンスを組み合わせて構成されたグループ。</li>
+      </list-definition>
+
+      <list-definition term="EC2インスタンスストア">
+        <li slot="description">EC2の揮発性ブロックストレージ。</li>
+        <li slot="description">EBSのようにデータが永続化されない一方で、EBSより高IOPS、高スループット、低レイテンシーのため、高いI/Oパフォーマンスが必要な一時ストレージに最適。</li>
+      </list-definition>
+
+      <list-definition term="EC2 Spot Fleet">
+        <li slot="description">AWSのEC2で提供される、スポットインスタンスをまとめたグループのこと。</li>
+        <li slot="description">スポットインスタンスは、AWSが空き資源を利用して安く提供するインスタンスタイプで、スポットフリートは、そのスポットインスタンスを効率的に利用するための仕組み。</li>
+      </list-definition>
+
+      <list-definition term="EC2 オンデマンド容量予約">
+        <li slot="description">指定したアベイラビリティーゾーンとAWSリージョンでEC2インスタンスの容量を確保できる。</li>
+      </list-definition>
+
+      <list-definition term="AWS Lambda">
+        <li slot="description">サーバーを管理することなく、イベント発生時にコードを実行できるサーバーレスコンピューティングを実現する、FaaS（Function as a Service）型のサービス。</li>
+      </list-definition>
+
+      <list-definition term="Amazon SQS">
+        <span slot="name">Amazon Simple Queue Service</span>
+        <li slot="description">完全マネージド型のメッセージキューイングサービス。自動スケーリング。</li>
+        <li slot="description">アプリケーション間でメッセージを非同期にやり取りするための仕組みを提供し、マイクロサービスのような分散システムを構築する際に役立つ。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Redshift">
+        <li slot="description">フルマネージド型データウェアハウスサービス。</li>
+        <li slot="description">高速にデータ分析できるのが特徴で、大規模なデータを効率的に処理する。</li>
+      </list-definition>
+
+      <list-definition term="AWS ELB">
+        <span slot="name">AWS Elastic Load Balancing</span>
+        <li slot="description">ロードバランシングサービス。アプリケーションへのトラフィックを複数のターゲット (EC2 インスタンス、コンテナなど) に分散することで、サービスの可用性を向上させ、負荷を均一化する。</li>
+        <li slot="description">ELBは、ALB (Application Load Balancer)、NLB (Network Load Balancer)、GLB (Gateway Load Balancer) の3種類があり、それぞれ異なるユースケースに対応している。</li>
+      </list-definition>
+
+      <list-definition term="AWS ALB">
+        <span slot="name">AWS Application Load Balancer</span>
+        <li slot="description">HTTP/HTTPSトラフィックを分析し、リクエストの内容 (URLやヘッダーなど) に基づいて適切なサーバーに振り分けることで、柔軟な負荷分散を実現する。</li>
+        <li slot="description">ホストベースのルーティング機能を備えているため、異なるURLを持つ異なるターゲットグループにリクエストを転送できる。</li>
+      </list-definition>
+
+      <list-definition term="AWS NLB">
+        <span slot="name">AWS Network Load Balancer</span>
+        <li slot="description">アプリケーションへのトラフィックを分散するロードバランサーの一種で、特に高パフォーマンスと低遅延が求められる場合に利用される。</li>
+        <li slot="description">TCP/UDPのトラフィック分散に最適。</li>
+      </list-definition>
+
+      <list-definition term="AWS GWLB">
+        <span slot="name">AWS Gateway Load Balancer</span>
+        <li slot="description">ロードバランサーの一種で、ファイアウォールや侵入検知システムなどのサードパーティ製仮想アプライアンスを、デプロイ、スケーリング、管理を容易にするサービス。</li>
+      </list-definition>
+
+      <list-definition term="コネクションドレイニング">
+        <li slot="description">バックエンドサーバーの登録解除や削除を行う際に、現在進行中の接続 (コネクション) を切断せずに、処理が完了するまで一定時間待つ機能。これにより、アプリケーションに急な中断が発生するのを避け、ユーザーへの影響を最小限に抑えることができる。</li>
+        <li slot="description">ロードバランサーがアプリケーションサーバーを使用不可能と判断した場合に発生する状況を処理するために使用される。</li>
+      </list-definition>
+
+      <list-definition term="Auto Scaling">
+        <li slot="description">システムの需要に基づいてコンピューティング・リソースを自動的に割り当てるクラウド・コンピューティング機能。</li>
+        <li slot="description">Auto Scalingを利用することで、CPU使用率に応じてインスタンスの数を自動的に増減させることができる。これにより、CPU使用率をなるべく一定に保つことが可能。</li>
+      </list-definition>
+
+      <list-definition term="Auto Scaling Group">
+        <li slot="description">自動スケーリングと管理の目的で論理グループとして扱われるインスタンスの集合が含まれる。</li>
+      </list-definition>
+
+      <list-definition term="データベースクラスタ">
+        <li slot="description">複数のデータベースサーバが連携して一つのデータベースとして動作する仕組み。</li>
+      </list-definition>
+
+      <list-definition term="スループット">
+        <li slot="description">コンピューターやネットワーク機器が一定時間あたりに転送できるデータ量のこと。</li>
+        <li slot="description">基本的にスループットの数値が高ければ高いほど、1秒あたりに転送できるデータ量が増え、通信速度が速くなる。</li>
+      </list-definition>
+
+      <list-definition term="NATゲートウェイ">
+        <span slot="name">Network Address Translation Gateway</span>
+        <li slot="description">プライベートなIPアドレスを持つリソースがインターネットにアクセスするために使用されるネットワークアドレス変換サービス。</li>
+        <li slot="description">プライベートなIPアドレスをパブリックなIPアドレスに変換し、インターネットとの通信を可能にする。これにより、プライベートネットワーク内のリソースが直接インターネットに公開されることなく、外部サービスにアクセスできるようになる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon RDS">
+        <span slot="name">Amazon Relational Database Service</span>
+        <li slot="description">リレーショナルデータベースサービス。クラウド環境でリレーショナルデータベースを簡単に設定、運用、スケールできるウェブサービス。</li>
+        <li slot="description">MySQL、PostgreSQL、Oracle、SQL ServerなどのRDBMSを、手軽にクラウド上で利用することができる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon RDS Proxy">
+        <li slot="description">データベース接続の管理を最適化し、接続プールを利用することでアプリケーションのスケーラビリティを向上させるマネージドプロキシサービス。</li>
+      </list-definition>
+
+      <list-definition term="AWS CLI">
+        <span slot="name">AWS Command Line Interface</span>
+        <li slot="description">AWSのサービスをコマンドラインから操作するための、オープンソースのツール。</li>
+        <li slot="description">コマンドを入力することで、AWSマネジメントコンソールで行う操作と同様のことが行える。また、スクリプト化することで、AWS環境の操作を自動化することも可能。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Lightsail">
+        <li slot="description">仮想プライベートサーバーサービス。</li>
+        <li slot="description">AWSのクラウド上に、ウェブサイトやウェブアプリケーションなどのホスティングに必要なリソース (CPU、メモリ、ストレージ、データ転送) をパッケージ化して、手軽に利用できるサービス。初心者でも簡単にサーバーを立ち上げ、ウェブサイトやアプリケーションを構築することが可能。</li>
+      </list-definition>
+
+      <list-definition term="セキュリティグループ">
+        <li slot="description">デフォルトは、すべてのインバウンドトラフィックは拒否され、すべてのアウトバウンドトラフィックは許可される。</li>
+        <li slot="description">ステートフルで、一度インバウンドを許可するとアウトバウンドも自動的に許可されるAllow‐onlyモデル。</li>
+      </list-definition>
+
+      <list-definition term="ネットワークACL">
+        <span slot="name">Network Access Control List</span>
+        <li slot="description">ネットワークトラフィックの制御を行うためのリストで、サブネットレベルでインバウンドとアウトバウンドのトラフィックを許可または拒否する。</li>
+        <li slot="description">ACLはVPC (仮想プライベートクラウド) 内のサブネットに対して設定され、そのサブネットの境界でトラフィックをフィルタリングする。</li>
+        <li slot="description">インバウンド (ネットワーク外部からサブネット内へのトラフィック) とアウトバウンド (サブネット内からネットワーク外部へのトラフィック) をそれぞれ個別に制御できる。</li>
+      </list-definition>
+
+      <list-definition term="Web ACL">
+        <span slot="name">Web Access Control List</span>
+        <li slot="description">AWS WAFで利用される、Webアプリケーションへのアクセスを制御するためのリスト。</li>
+        <li slot="description">Web ACLは、ルールをグループ化し、特定の条件に一致するリクエストを許可または拒否することで、Webアプリケーションを保護する。</li>
+      </list-definition>
+
+      <list-definition term="AWS Direct Connect">
+        <li slot="description">オンプレミス環境とAWSクラウドの間を、インターネットを経由せずに専用のネットワーク回線で接続するサービス。</li>
+        <li slot="description">高帯域幅、プライベート接続、安定した接続が可能となり、オンプレミスとクラウド間の大量データ転送などに適している。</li>
+      </list-definition>
+
+      <list-definition term="Amazon API Gateway">
+        <li slot="description">フルマネージド型サービスで、APIの作成、公開、管理、監視、セキュリティを効率的に行うためのツール。</li>
+        <li slot="description">REST/HTTP、WebSocket APIをサポートし、認証・承認、トラフィック管理、モニタリング、バージョン管理といったAPIのライフサイクル全般を管理できる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon EventBridge">
+        <li slot="description">スケジュールされたルールをLambda関数にマッピングできるフルマネージドのイベントバスサービス。</li>
+      </list-definition>
+
+      <list-definition term="AWS Transit Gateway">
+        <li slot="description">複数のVPCやオンプレミスネットワークを相互に接続するためのハブのような機能を提供する。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Data Pipeline">
+        <li slot="description">AWS内のデータの抽出、変換、転送を自動化するための管理サービス。DynamoDBのデータをS3へエクスポートしたり、S3のデータをDynamoDBへインポートできる。</li>
+        <li slot="description">このサービスを使えば、指定した順序でデータのムーブメントとデータ処理アクティビティを実行できる。</li>
+      </list-definition>
+
+      <list-definition term="プロビジョニング">
+        <li slot="description">ITインフラ設備やシステムリソースを、需要に合わせて準備、割り当て、設定、管理するプロセスを指す。</li>
+        <li slot="description">具体的には、サーバー、ネットワークデバイス、アプリケーション、ユーザーアカウントなどを、ユーザーが利用できる状態にするために行う作業。</li>
+      </list-definition>
+
+      <list-definition term="インフラストラクチャ">
+        <li slot="description">ITサービスを運用する上で必要なハードウェア、ソフトウェア、ネットワークなど。</li>
+      </list-definition>
+
+      <list-definition term="AWS CloudFormation">
+        <li slot="description">AWSクラウドでリソースを簡単にプロビジョニング&amp;管理できるサービス。</li>
+        <li slot="description">AWSのリソース (サーバー、データベース、ネットワークなど) をコードで定義し、自動的に作成、更新、削除するサービス。</li>
+        <li slot="description">テンプレートと呼ばれるJSONまたはYAML形式のテキストファイルでAWSリソースの構成を記述し、そのテンプレートに基づいてスタックと呼ばれるリソース群を作成する。</li>
+      </list-definition>
+
+      <list-definition term="AWS CloudFormation StackSets">
+        <li slot="description">単一のCloudFormationテンプレートを複数のAWSアカウントおよびリージョンにデプロイできる。これにより、企業全体で一貫したリソースプロビジョニングプロセスを実現できる。</li>
+      </list-definition>
+
+      <list-definition term="Elastic IP">
+        <li slot="description">AWSで提供される静的なパブリックIPv4アドレス。</li>
+        <li slot="description">EC2インスタンスやネットワークインターフェイスに割り当てると、インスタンスを停止・起動してもIPアドレスが変わらず、固定したIPアドレスでインターネットにアクセスできるようになる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon EFS">
+        <span slot="name">Amazon Elastic File System</span>
+        <li slot="description">AWSが提供するフルマネージド型のファイルストレージサービス。</li>
+        <li slot="description">AWSサービス (特にEC2インスタンス) 間でファイルを共有するために利用される。リージョン内のすべてのAvailability Zone (AZ) にわたって自動的に冗長化される。</li>
+        <li slot="description">複数のEC2インスタンスから同時にマウントできる。File Systemサイズは自動的に拡張される。</li>
+      </list-definition>
+
+      <list-definition term="Amazon ECS">
+        <span slot="name">Amazon Elastic Container Service</span>
+        <li slot="description">AWSのマネージド型のコンテナオーケストレーションサービス。</li>
+        <li slot="description">コンテナ化されたアプリケーションを簡単にデプロイ、管理、スケーリングできる。</li>
+      </list-definition>
+
+      <list-definition term="AWS Fargate">
+        <li slot="description">Amazon ECSやAmazon EKSでコンテナを実行するためのサーバーレスコンピューティングエンジン。</li>
+        <li slot="description">コンテナを起動するために、サーバーやクラスターをプロビジョニング、設定、スケーリングする必要がなく、従量制料金でコンテナを動かすことができる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon ECS on Fargate">
+        <li slot="description">サーバーレスのコンテナ実行環境。Fargateを利用することで、インフラ (サーバーやEC2インスタンス) の管理を意識することなく、コンテナをデプロイし実行できる。</li>
+      </list-definition>
+
+      <list-definition term="フェイルオーバー">
+        <li slot="description">システム障害が発生した場合に、自動的に予備システムに切り替える仕組み。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Route 53">
+        <li slot="description">DNSサービス。AWSの他のサービスとの連携が簡単で、Amazon S3やELB (Elastic Load Balancing) などのIPが動的に変更されるサービスを利用する上でも、Amazon Route 53を使ったDNSの設定が役立つ。</li>
+        <li slot="description">フェイルオーバーオプションを利用することで、Webサイトに障害が発生した場合に静的なS3Webサイトへ自動的にフェイルオーバーさせることができる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Cognito">
+        <li slot="description">Webアプリケーションなどでユーザの認証 (ログイン、ログアウト) などの機能を実装できるサービス。</li>
+        <li slot="description">UI上で簡単な設定をするだけでユーザ管理を実装できる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Cognito Identity Pool">
+        <li slot="description">AWSのリソースへのアクセスを許可するために、ユーザーに一時的なAWS認証情報を発行するサービス。</li>
+        <li slot="description">主に、アプリケーションユーザーを認証済みのAWSリソースに接続するために使用される。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Cognito ユーザープール オーソライザー">
+        <li slot="description">API Gatewayに設定することで、Amazon Cognitoがトークンの有効性を検証し、適切なアクセス権を持つユーザーのみがリソースにアクセスできるようになる。</li>
+      </list-definition>
+
+      <list-definition term="エッジロケーション">
+        <li slot="description">なるべくユーザーに近いネットワークでのアクセスを提供するためのサービスで、高速で安定したアクセスを実現させるサービス。</li>
+        <li slot="description">リージョンやAZは配置されている国や地域が限定されているため、サービス利用者が直接これらのサーバーにアクセスしようとした場合、物理的な距離が遠い場合がある。</li>
+      </list-definition>
+
+      <list-definition term="Amazon CloudFront">
+        <li slot="description">静的、動的なWebコンテンツを高速かつ安全に配信するための、AWSが提供するコンテンツデリバリネットワーク (CDN) サービス。</li>
+        <li slot="description">世界中に配置されたエッジロケーションを活用することで、エンドユーザーに近い場所からコンテンツを配信し、低レイテンシー (遅延時間) を実現する。</li>
+        <li slot="description">Amazon S3バケットとALBの両方をオリジンとしてサポートする。</li>
+      </list-definition>
+
+      <list-definition term="レイテンシ">
+        <li slot="description">データ転送における指標のひとつで、転送要求を出してから実際にデータが送られてくるまでに生じる、通信の遅延時間のこと。</li>
+        <li slot="description">この遅延時間が短いことをレイテンシが小さい (低い) 、遅延時間が長いことをレイテンシが大きい (高い) と表現する。</li>
+      </list-definition>
+
+      <list-definition term="AWS Global Accelerator">
+        <li slot="description">AWSグローバルネットワークを経由してTCP/UDPトラフィックを最適ルーティングし、高い可用性と低レイテンシーを実現するためのサービス。</li>
+        <li slot="description">エンドユーザーをアプリケーションへの最適経路にルーティングする。</li>
+      </list-definition>
+
+      <list-definition term="プレイスメントグループ">
+        <li slot="description">同じAWSリージョン内の単一のアベイラビリティーゾーン内で、EC2インスタンスを論理的にグループ分けすることができる機能。</li>
+      </list-definition>
+
+      <list-definition term="Amazon CloudWatch">
+        <li slot="description">AWSのモニタリングサービスであり、EC2インスタンスのCPU使用率などのメトリクスを収集して監視できる。</li>
+        <li slot="description">Auto Scalingの設定でCloudWatchからデータを取得し、指定した条件に基づいてインスタンスの追加や削除を自動化できる。</li>
+        <li slot="description">AWS環境における様々なリソースやアプリケーションのパフォーマンスを監視するためのサービス。</li>
+      </list-definition>
+
+      <list-definition term="Amazon CloudWatch Synthetics">
+        <li slot="description">ウェブサイトやAPIのエンドポイントに対して、ユーザーと同じアクションを実行して、パフォーマンスや可用性をモニタリングすることができるサービス。</li>
+      </list-definition>
+
+      <list-definition term="Amazon CloudWatch Logs">
+        <li slot="description">AWSで生成されるログデータを収集、保管、分析するためのサービス。</li>
+        <li slot="description">ログデータの収集、監視、分析に特化しており、AWSのさまざまなサービスや、EC2インスタンス、アプリケーションなどからのログを、一元的に管理することができる。</li>
+        <li slot="description">Cloudwatch Logsのサブスクリプション機能を使用すれば、Cloudwatch LogsのログデータをリアルタイムでLambda関数に転送できる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon CloudWatch Container Insights">
+        <li slot="description">Amazon EKSクラスターのメトリクスとログの収集、集約、要約に使用できるマネージドサービス。</li>
+      </list-definition>
+
+      <list-definition term="LDAP">
+        <span slot="name">Lightweight Directory Access Protocol</span>
+        <li slot="description">エルダップ。ネットワーク内でユーザー、グループ、コンピュータなどの情報を一元管理するための標準プロトコル。</li>
+        <li slot="description">ディレクトリサービスと呼ばれる情報データベースにアクセスし、認証やアクセス制御、リソースの検索を行うための基盤として広く利用されている。</li>
+      </list-definition>
+
+      <list-definition term="IDフェデレーション">
+        <li slot="description">異なるドメインや組織間でユーザーID情報を共有し、相互に認証を行う仕組み。</li>
+        <li slot="description">ユーザーが1つのドメインで認証することで、他のドメインのリソースにアクセスできるようになる。</li>
+      </list-definition>
+
+      <list-definition term="ACM">
+        <span slot="name">AWS Certificate Manager</span>
+        <li slot="description">AWS内でSSL/TLS証明書をプロビジョニング、管理、デプロイするためのサービス。</li>
+        <li slot="description">Webサイトやアプリケーションの安全な通信を確保するために不可欠なSSL/TLS証明書を、手動で行う手間を省き、自動で発行、更新できる。</li>
+        <li slot="description">無料でSSL証明書を発行でき、発行した証明書をEC2インスタンスの前段に配置されたElastic Load Balancing (ELB) にインストールすることでSSL通信が可能になる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Athena">
+        <li slot="description">標準のSQLクエリを使ってS3のデータを対話形式で分析できるサーバーレスのクエリサービス。</li>
+        <li slot="description">サーバーレスであり、データの量に応じて自動的にスケーリングされるため、費用対効果が高くなる。</li>
+      </list-definition>
+
+      <list-definition term="データレイク">
+        <li slot="description">あらゆる種類のデータを未加工の状態で格納し、後で分析や機械学習などの目的に使用できるプラットフォーム。</li>
+        <li slot="description">AIのトレーニングデータや、データ分析のための基盤として重要視されている。</li>
+      </list-definition>
+
+      <list-definition term="インプレースクエリ">
+        <li slot="description">S3のようなオブジェクトストレージ上で、データを外部に移動させることなく、直接クエリを実行できる機能のこと。</li>
+        <li slot="description">これにより、S3に保存されたデータを分析プラットフォームにコピーせずに、S3の中で直接分析を完了できる。</li>
+      </list-definition>
+
+      <list-definition term="BIツール">
+        <span slot="name">Business Intelligence Tool</span>
+        <li slot="description">企業が保有するデータを収集・分析し、可視化することで経営判断や意思決定を支援するソフトウェア。</li>
+      </list-definition>
+
+      <list-definition term="AWS Glue">
+        <li slot="description">データ分析、機械学習、アプリケーション開発のために、データの検出、準備、結合を簡単に実行できる、サーバーレスでスケーラブルなデータ統合サービス。</li>
+      </list-definition>
+
+      <list-definition term="Amazon EMR">
+        <span slot="name">Amazon Elastic MapReduce</span>
+        <li slot="description">AWSが提供するビッグデータ処理のためのマネージドサービス。ビッグデータの処理に使用されるクラスタリングプラットフォーム。</li>
+        <li slot="description">Hadoop、Spark、HBase、Presto、Hiveなどの分散データ処理フレームワークを簡単に実行できる。</li>
+      </list-definition>
+
+      <list-definition term="DNSフェイルオーバー">
+        <li slot="description">DNSを利用して、メインサーバーに障害が発生した場合に、自動的にバックアップサーバー (予備システム) に切り替える仕組み。</li>
+      </list-definition>
+
+      <list-definition term="Hadoop">
+        <li slot="description">膨大なデータを複数のマシンに分散して処理するオープンソースのソフトウェアフレームワーク。</li>
+      </list-definition>
+
+      <list-definition term="AWS CloudTrail">
+        <li slot="description">AWSアカウント内のすべてのユーザーとAPI操作をログに記録するサービス。AWSアカウントのアクティビティに関する証跡を収集する。</li>
+        <li slot="description">記録されたログは、AWSアカウントのガバナンス、コンプライアンス、セキュリティ監査を支援し、AWSの利用状況を可視化する。</li>
+      </list-definition>
+
+      <list-definition term="AWS Trusted Advisor">
+        <li slot="description">AWSリソースの利用状況やサービスの利用料金を分析し、コスト最適化やセキュリティリスクの有無などの推奨事項を通知してくれるサービス。</li>
+        <li slot="description">コストの削減、可用性とパフォーマンスの向上、セキュリティの改善に役立つ一連のベストプラクティスチェックと推奨事項を提供。</li>
+      </list-definition>
+
+      <list-definition term="Amazon KDS">
+        <span slot="name">Amazon Kinesis Data Streams</span>
+        <li slot="description">AWSが提供するリアルタイムのストリーミングデータサービス。大量のストリームデータをリアルタイムに収集し、永続的に保存、処理、分析するために設計されている。</li>
+        <li slot="description">ソースからの大量のクリックストリームデータを収集し、データストリームを永続的に保存し、リアルタイムで複数の消費者アプリケーションに配信することができる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Glacier">
+        <li slot="description">低コストのクラウドストレージサービス。</li>
+        <li slot="description">主に、アーカイブや長期バックアップなどの、頻繁にアクセスしないデータの保存に適している。コストを抑えながら、高い耐久性とセキュリティを確保したい場合に利用される。</li>
+      </list-definition>
+
+      <list-definition term="AWS Import/Export">
+        <li slot="description">オンプレミスや他のクラウド環境からAWSにデータを移行するサービスで、物理デバイス (Snowball) やVMイメージを利用した移行方法がある。</li>
+        <li slot="description"></li>
+      </list-definition>
+
+      <list-definition term="VM Import/Export">
+        <li slot="description">オンプレミスの仮想化環境で作成した仮想マシンイメージをAWSにインポートするためのサービス。</li>
+        <li slot="description">オンプレ環境の仮想マシンから作成したRAW形式のイメージファイルをS3にアップロードし、AMIに変換することができる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon SES">
+        <span slot="name">Amazon Simple Email Service</span>
+        <li slot="description">Eメール送信サービス。ユーザーは自身のEメールアドレスやドメインを使用してEメールを送信したり、受信したりできる。</li>
+      </list-definition>
+
+      <list-definition term="AWS Secrets Manager">
+        <li slot="description">データベースのクレデンシャル、APIキー、その他のシークレット情報を安全に保存および配布するために設計されたサービス。</li>
+        <li slot="description">パスワードローテーション機能を利用することで、指定した期間ごとにシークレットを自動的に変更することができる。</li>
+        <li slot="description">データベース認証情報やサーバー上のプライベートキーなどの重要な資格情報を安全に保存し、回転させることができる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon FSx">
+        <li slot="description">高性能でスケーラブルなファイルシステムサービス。AWS上でファイルストレージを構築し、運用する際に、ハードウェアの管理やOSのアップデートなどをAWSが担当する、フルマネージド型サービス。</li>
+      </list-definition>
+
+      <list-definition term="Amazon FSx for Lustre">
+        <li slot="description">高速な分散型ファイルシステムLustre (ルストレ) をフルマネージドで利用できるサービス。完全にマネージド型のハイパフォーマンス ファイル システム。</li>
+         <li slot="description">S3からのデータへのファイルシステムとしてのアクセス、高い処理能力とスループットを提供。</li>
+      </list-definition>
+
+      <list-definition term="AWS Snowball">
+        <li slot="description">大規模なデータセットをAWSクラウドに物理的に移行するためのサービス。データセンターからAWSへの大量データの移行に適している。</li>
+      </list-definition>
+
+      <list-definition term="AWS Snowball Edge">
+        <li slot="description">エッジロケーションで利用できる、オンボードストレージとコンピューティング能力を備えたデバイス。</li>
+        <li slot="description">エッジロケーションでデータをローカルに処理し、遅延を低減し、帯域幅の消費を削減。</li>
+      </list-definition>
+
+      <list-definition term="AWS Snowball Edge Storage Optimized">
+        <li slot="description">大量のデータをオンプレミスからAWSに安全かつ迅速に転送するためのデバイス。特に、数十テラバイトから数ペタバイトのデータを転送する必要がある場合に適している。</li>
+      </list-definition>
+
+      <list-definition term="Amazon EKS">
+        <span slot="name">Amazon Elastic Kubernetes Service</span>
+        <li slot="description">AWS クラウド上で Kubernetes を簡単に利用できるマネージド型サービス。</li>
+      </list-definition>
+
+      <list-definition term="IOPS">
+        <span slot="name">Input/Output Operations Per Second</span>
+        <li slot="description">ストレージ (ハードディスクやSSDなど) が1秒あたりに処理できる入出力操作の数を表す性能指標。</li>
+      </list-definition>
+
+      <list-definition term="AWS Elastic Beanstalk">
+        <li slot="description">WebアプリケーションやWebサービスのデプロイと管理を自動化するPaaS (Platform as a Service) サービス。</li>
+        <li slot="description">開発者は、アプリケーションのコード (zipまたはwarファイル) をアップロードするだけで、AWS Elastic Beanstalkが自動的にインフラストラクチャのプロビジョニング、ロードバランシング、スケーリング、データベース、アプリケーションの状態モニタリングなどを設定・管理する。</li>
+      </list-definition>
+
+      <list-definition term="ディザスタリカバリポリシー">
+        <li slot="description">企業や組織が災害やシステム障害によって引き起こされるダウンタイムを最小限に抑え、業務を迅速に再開できるようにするための、具体的な対策や手順をまとめた文書。</li>
+      </list-definition>
+
+      <list-definition term="AWS Shield">
+        <li slot="description">DDoS攻撃からの防御に使用するサービス。</li>
+      </list-definition>
+
+      <list-definition term="ARN">
+        <span slot="name">Amazon Resource Name</span>
+        <li slot="description">ARNは、リソースやサービスの参照に使用される。</li>
+      </list-definition>
+
+      <list-definition term="AWS Organizations">
+        <li slot="description">複数のAWSアカウントを一元管理するためのサービス。</li>
+      </list-definition>
+
+      <list-definition term="NFS">
+        <span slot="name">Network File System</span>
+        <li slot="description">ネットワーク越しにファイルを共有するための仕組み。</li>
+      </list-definition>
+
+      <list-definition term="SMB ファイルサーバー">
+        <span slot="name">Server Message Block ファイルサーバー</span>
+        <li slot="description">ネットワーク上でファイルを共有するためのプロトコルと、その機能を実装したサーバーのこと。</li>
+        <li slot="description">SMB (Server Message Block) は、主にWindows環境でファイル共有に使われ、複数のPCやデバイス間でファイルを共有したり、プリンターを共有したりする際に利用される。</li>
+      </list-definition>
+
+      <list-definition term="Amazon GuardDuty">
+        <li slot="description">脅威検出サービス。セキュリティ監視とログ分析のサービス。</li>
+      </list-definition>
+
+      <list-definition term="AWS Firewall Manager">
+        <li slot="description">AWS Organizationsを使用して複数のAWSアカウントとリソースをセキュリティポリシーで一元管理できる。</li>
+      </list-definition>
+
+      <list-definition term="AWS Network Firewall">
+        <li slot="description">AWSクラウド内のトラフィックをインスペクションし、アプリケーションレベルのフィルタリングを行うマネージド型のネットワーク ファイアウォール サービス。</li>
+        <li slot="description">本番VPCのトラフィックを検査およびフィルタリングするために、適切なルールを作成することができる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon QuickSight">
+        <li slot="description">AWSのクラウドベースのビジネス インテリジェンス サービス。</li>
+        <li slot="description">データソースを接続し、視覚化ダッシュボードを作成して、適切なユーザーやグループと共有できる。管理チームにはフルアクセス権限を付与し、その他のユーザーにはアクセス制限を設定できる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Inspector">
+        <li slot="description">AWSのリソースのセキュリティ脆弱性や、意図しないネットワークへの露出を自動的に検出し、継続的にスキャンする脆弱性管理サービス。</li>
+        <li slot="description">ソフトウェア脆弱性のスキャンを行うサービス。</li>
+      </list-definition>
+
+      <list-definition term="AWS Config">
+        <li slot="description">AWSリソースの設定変更を記録、評価、監査できるサービス。</li>
+      </list-definition>
+
+      <list-definition term="AWS App Mesh">
+        <li slot="description">AWS上で動くマイクロサービスアプリケーション間の通信を容易にするために、アプリケーションレベルのネットワーキングを提供するサービスメッシュ。</li>
+      </list-definition>
+
+      <list-definition term="Amazon AppFlow">
+        <li slot="description">SaaSアプリケーションとAWSサービス間のデータを安全に転送できる、フルマネージドサービス。</li>
+      </list-definition>
+
+      <list-definition term="AWS DMS">
+        <span slot="name">AWS Database Migration Service</span>
+        <li slot="description">リレーショナルデータベース、データウェアハウス、NoSQL データベース、およびその他のタイプのデータストアを移行できるようにするクラウドサービス。</li>
+      </list-definition>
+
+      <list-definition term="AWS Systems Manager">
+        <li slot="description">AWSクラウド、オンプレミス、マルチクラウド環境のシステムを統合的に管理し、運用作業の自動化やリソース構成の可視化を可能にするサービス。</li>
+        <li slot="description"></li>
+      </list-definition>
+
+      <list-definition term="AWS Systems Manager Patch Manager">
+        <li slot="description">フリートのインスタンスに対するセキュリティ関連のパッチ適用を自動化するためのサービス。</li>
+      </list-definition>
+
+      <list-definition term="ピアリング接続">
+        <li slot="description">異なるネットワークや仮想ネットワーク(VPC)同士を互いに認識し、直接接続して通信できるようにすること。</li>
+        <li slot="description">具体的には、2つのVirtual Private Cloud (VPC)の間で、プライベートなネットワークを通じてデータがスムーズにやり取りできるようにする仕組み。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Rekognition">
+        <span slot="name">リコグニション</span>
+        <li slot="description">画像・動画分析サービス。深層学習技術を活用して、画像や動画から物体、人物、顔、テキスト、シーンなどを検出・識別し、さらに不適切なコンテンツの検出などを行う。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Comprehend">
+        <span slot="name">コンプリヘンド</span>
+        <li slot="description">自然言語処理サービスで、テキストデータの処理に使用される。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Comprehend Medical">
+        <li slot="description">自然言語処理 (NLP) サービスで、医療テキストから情報を抽出するために機械学習を活用する。</li>
+      </list-definition>
+
+      <list-definition term="AWS RAM">
+        <span slot="name">AWS Resource Access Manager</span>
+        <li slot="description">AWSリソースを複数のAWSアカウントや組織単位 (OU) で共有できるサービス。</li>
+        <li slot="description">VPCエンドポイントを共有することで、各VPCから特定のAWS サービス (例：S3, DynamoDB など) にプライベートアクセスを提供。</li>
+      </list-definition>
+
+      <list-definition term="Amazon SageMaker">
+        <li slot="description">フルマネージド型の機械学習サービス。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Textract">
+        <li slot="description">スキャンしたドキュメントからテキスト、手書き文字、レイアウト要素、データを自動的に抽出する機械学習 (ML) サービス。</li>
+      </list-definition>
+
+      <list-definition term="AWS Backup">
+        <li slot="description">AWSのサービスやハイブリッドワークロードのデータを一元化してバックアップ・復元できるフルマネージドサービス。</li>
+        <li slot="description">バックアップポリシーの作成や、バックアップの自動化、一元管理など、バックアップを簡単に行うための機能が備わっている。</li>
+        <li slot="description">EBS、RDS、DynamoDB、EFSなど主要サービスのバックアップを一元管理でき、バックアップコピーのクロスリージョン保存やライフサイクル設定もGUI／APIで簡単に構成可能。</li>
+      </list-definition>
+
+      <list-definition term="CIDR">
+        <span slot="name">Classless Inter-Domain Routing</span>
+        <li slot="description">IPアドレスをより効率的に割り当て、管理するための技術。</li>
+        <li slot="description">IPアドレスのクラス分けに縛られず、任意のビット数でネットワーク部とホスト部を区切ることで、IPアドレス空間の無駄を減らすことができる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon MQ">
+        <li slot="description">メッセージブローカーサービス。Apache ActiveMQやRabbitMQといった、オープンソースのメッセージブローカーソフトウェアを管理・運用し、クラウド上で容易にメッセージキューイングの仕組みを構築する。</li>
+      </list-definition>
+
+      <list-definition term="AWS Storage Gateway">
+        <li slot="description">オンプレミス環境のストレージをAWSのクラウドストレージに接続するためのサービス。</li>
+        <li slot="description">オンプレミス環境のアプリケーションは、あたかもローカルストレージのようにAWSのストレージ (S3、EBS、Glacierなど) を利用できる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Macie">
+        <span slot="name">メイシー</span>
+        <li slot="description">AWSのフルマネージド型データセキュリティサービス。機密データの検出と保護を行うサービス。</li>
+        <li slot="description">機械学習とパターンマッチングを使い、Amazon S3に保存されている機密データ (個人情報、クレジットカード情報など) を自動的に検出し、データセキュリティリスクを可視化し、そのリスクに対する自動保護を可能にする。</li>
+      </list-definition>
+
+      <list-definition term="AWS PrivateLink">
+        <li slot="description">インターネット接続せずにプライベート接続ができるサービス。</li>
+      </list-definition>
+
+      <list-definition term="AWS KMS">
+        <span slot="name">AWS Key Management Service</span>
+        <li slot="description">AWS上でデータの暗号化に使用するキーを管理するためのサービス。</li>
+        <li slot="description">このサービスを利用することで、キーの作成、保管、使用、無効化、削除などの操作を安全かつ効率的に行うことができる。また、他のAWSサービスと連携して、データの暗号化を管理することも可能。</li>
+      </list-definition>
+
+      <list-definition term="SCP">
+        <span slot="name">Service Control Policy</span>
+        <li slot="description">組織単位 (OU) またはAWS全体の組織に対して設定できるポリシー。</li>
+        <li slot="description">SCPは、組織内のすべてのアカウントに適用されるアクセス許可の上限を設定するために使用される。これにより、リソースアクセスの一元管理が可能になり、セキュリティの標準化が実現する。</li>
+        <li slot="description">特定のサービスやアクションへのアクセスを組織全体で制限するには、ルート組織単位にSCPを作成する必要がある。</li>
+      </list-definition>
+
+      <list-definition term="AWS Transfer Family">
+        <li slot="description">完全マネージド型のSFTPサービス。公開エンドポイントを提供でき、Amazon S3などのAWSストレージサービスとシームレスに統合できる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Kinesis Data Firehose">
+        <li slot="description">フルマネージド型のストリーミングデータ配信サービスで、ユーザーの入力やアクセスログなど、様々なデータソースから生成されたストリーミングデータを、S3やRedshiftなどのデータストアや分析ツールにリアルタイムで配信できる。</li>
+        <li slot="description">ログデータのストリーミング配信サービス。指定されたソースからログデータを収集し、AWS管理ストレージ (Amazon S3、Amazon Redshift、Amazon ElasticsearchServiceなど) に自動的に配信することができる。</li>
+        <li slot="description">ストリーミングデータを Amazon S3、Amazon Redshift など、データストアに転送するサービス。リアルタイムのデータフィードには適していない。</li>
+      </list-definition>
+
+      <list-definition term="AMP">
+        <span slot="name">Amazon Managed Service for Prometheus</span>
+        <li slot="description">Prometheus (プロメテウス) 互換のメトリクスを扱うためのフルマネージドなサービスです。大規模なコンテナ環境のモニタリングを容易にし、運用コストと手間を削減できる。</li>
+        <li slot="description">コンテナ環境のメトリクスを収集し、スケーラブルな監視を提供するマネージドサービス。</li>
+        <li slot="description">Prometheusは、Kubernetesなどのコンテナオーケストレーション環境で利用されるオープンソースのモニタリングシステムであり、Amazon Managed Service for Prometheusは、Prometheusのフルマネージドな実装を提供する。これにより、開発者はスケーラブルなメトリクス収集と可視化を容易に実装でき、運用負担を軽減できる。</li>
+      </list-definition>
+
+      <list-definition term="AWS Data Exchange">
+        <li slot="description">AWS上でサードパーティーのデータ製品を検索、サブスクライブ、使用できるサービス。</li>
+        <li slot="description">これにより、企業はデータプロバイダーからデータを簡単に取得し、分析や機械学習に活用できるようになる。また、自社のデータもAWS Data Exchangeを通じて他のユーザーに提供できる。</li>
+        <li slot="description">AWS Data Exchangeを使用すると、ユーザーはサードパーティのデータセットを簡単に購入し、自身のAmazon S3バケットに直接インポートすることができます。これにより、AWS内でのデータの統合と分析が容易になる。</li>
+      </list-definition>
+
+      <list-definition term="AWS Serverless Application Repository">
+        <li slot="description">サーバーレスアプリケーション用のマネージド型リポジトリ。</li>
+        <li slot="description">チーム、組織、開発者個人が、再利用可能なアプリケーションを保存して共有できる。また、強力な新しい方法でサーバーレスアーキテクチャを簡単に組み立ててデプロイすることもできる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Managed Grafana">
+        <li slot="description">Grafana Labsが開発したオープンソースのデータ可視化ツールGrafana (グラファナ) をフルマネージドで利用できるAWSのサービス。</li>
+        <li slot="description">Grafanaは、システムやアプリケーションのメトリクス、ログ、トレースなどのデータを収集・可視化するためのツールで、Amazon Managed Grafanaは、そのGrafanaの運用管理をAWSが代行してくれるため、ユーザーはGrafanaの設定やメンテナンスに手間をかけることなく、データ分析に集中できる。</li>
+      </list-definition>
+
+      <list-definition term="AWS Batch">
+        <li slot="description">フルマネージドなバッチサービス。AWS BatchはCPUやメモリに最適化されたコンピューティングリソースの中から必要なものにアクセスし、数十万件におよぶバッチコンピューティングジョブを行う。つまり、ジョブを実行するためのインフラ環境をユーザ側で準備する必要がない。</li>
+        <li slot="description"></li>
+      </list-definition>
+
+      <list-definition term="Amazon Lex">
+        <li slot="description">AWSが提供するフルマネージドのAIサービスで、会話型インターフェース (チャットボットや音声ボット) を設計、構築、テスト、およびデプロイするためのツール。</li>
+      </list-definition>
+
+      <list-definition term="Amazon QLDB">
+        <span slot="name">Amazon Quantum Ledger Database</span>
+        <li slot="description">AWSが提供するフルマネージド型の台帳データベース。</li>
+        <li slot="description">データの変更履歴を追跡し、改ざんを検知できるため、金融取引やサプライチェーン管理など、データの整合性と履歴が重要なアプリケーションに適している。</li>
+      </list-definition>
+
+      <list-definition term="AWS Security Hub">
+        <li slot="description">信頼できる通信施設内でホストされるAWSインフラストラクチャとサービスを提供するマルチテナントサービス。</li>
+        <li slot="description">モバイルエッジコンピューティングアプリケーションに最適化されている。エッジコンピューティングを必要とする低遅延アプリケーションに向いている。</li>
+      </list-definition>
+
+      <list-definition term="AWS Lake Formation">
+        <li slot="description">AWS 環境でデータレイクを構築、保護、管理するためのフルマネージドサービス。データレイクとは、あらゆる形式のデータを一元的に保存し、分析や機械学習に活用できるリポジトリのこと。</li>
+      </list-definition>
+
+      <list-definition term="AWS License Manager">
+        <li slot="description">ソフトウェアライセンスの管理に特化したサービス。ライセンスの追跡、アラートの設定、ライセンス利用状況のレポートなどができる。</li>
+        <li slot="description">ソフトウェアライセンスの使用状況を追跡し、管理することで、コストの最適化とコンプライアンスの維持を支援するサービス。</li>
+      </list-definition>
+
+      <list-definition term="AWS ADS">
+        <span slot="name">AWS Application Discovery Service</span>
+        <li slot="description">企業がオンプレミスのデータセンターからAWSへの移行を計画する際に、アプリケーションの依存関係を識別し、移行計画を支援するために使用。</li>
+        <li slot="description">オンプレミス環境のサーバーやデータベースの設定、使用状況、パフォーマンスなどの情報を収集・分析し、AWSクラウドへの移行を計画するのに役立つサービス。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Pinpoint">
+        <li slot="description">AWSが提供する顧客エンゲージメントサービスで、プッシュ通知、Eメール、SMS、音声などの複数のチャネルを通じて、顧客とのコミュニケーションを可能にする。</li>
+      </list-definition>
+
+      <list-definition term="AWS Compute Optimizer">
+        <li slot="description">コンピューティングリソース (EC2インスタンス、オートスケーリンググループ、EBSボリューム、Lambda関数など) の選定と配置に関する推奨事項を提供するサービス。これにより、パフォーマンスを向上させつつコストを削減することができる。</li>
+      </list-definition>
+
+      <list-definition term="AWS Device Farm">
+        <li slot="description">広範なデスクトップブラウザと実際のモバイルデバイスでテストすることにより、ウェブアプリケーションとモバイルアプリの品質を改善できるようにするアプリケーションテストサービス。</li>
+      </list-definition>
+
+      <list-definition term="AWS Outposts">
+        <li slot="description">AWSのインフラストラクチャ、サービス、API、ツールをオンプレミス環境に拡張できるフルマネージドサービス。</li>
+      </list-definition>
+
+      <list-definition term="Amazon MSK">
+        <span slot="name">Amazon Managed Streaming for Apache Kafka</span>
+        <li slot="description">Apache Kafkaのクラスターを簡単に設定、運用、スケールアウトできるマネージドサービス。</li>
+        <li slot="description">「データの自動レプリケーションを複数のAZにわたって有効化」はデータの耐久性と可用性を最大化する最適な方法。</li>
+      </list-definition>
+
+      <list-definition term="AWS Amplify">
+        <li slot="description">ウェブアプリケーションやモバイルアプリケーションを構築、デプロイ、ホスティングするためのフルスタックのクラウドプラットフォーム。</li>
+        <li slot="description">特にフルマネージドCI/CDパイプラインを提供することで、コードの変更が自動的にビルド、テスト、デプロイされる機能が有用。</li>
+      </list-definition>
+
+      <list-definition term="AWS Artifact">
+        <li slot="description">SOC、ISO、PCIなどの認定証明書や監査報告書をセルフサービスでダウンロードできるポータルを提供し、契約文書 (AWS Business Associate Addendum など) の管理も行えるサービス。</li>
+      </list-definition>
+
+      <list-definition term="AWS Audit Manager">
+        <li slot="description">AWSアカウント内のリソースがコンプライアンス違反していないかを継続的にチェックするサービス。</li>
+        <li slot="description">証拠収集を自動化して、ポリシー、手順、および活動 (コントロールとも呼ばれる) が効果的に機能しているかどうかを簡単に評価できる。</li>
+      </list-definition>
+
+      <list-definition term="RAIDコンフィギュレーション">
+        <li slot="description">複数のハードディスクドライブを組み合わせて、1つのディスクアレイ (ディスクグループ) として扱う構成のこと。これにより、データの冗長性やパフォーマンスの向上を図る。</li>
+        <li slot="description">RAID 0 (ストライピング) により、複数のディスクドライブにデータを分散して並列書き込みや読み込みを行うことで、I/O性能が向上。</li>
+        <li slot="description">RAID 1 (ミラーリング) はデータの冗長性を提供するが、読み取りに対してのみ性能が向上する。</li>
+      </list-definition>
+
+      <list-definition term="AWS AppSync">
+        <li slot="description">GraphQLを活用し、複数のデータソースを統合し、安全にアクセス・操作できるAWSのサーバーレス型マネージドサービス。</li>
+        <li slot="description">リアルタイム機能やデータの同期、必要なデータのみの取得など、多様な機能を備える。</li>
+      </list-definition>
+
+      <list-definition term="AWS DRS">
+        <span slot="name">AWS Elastic Disaster Recovery</span>
+        <li slot="description">オンプレミスやクラウドのアプリケーションを、迅速かつ確実に復旧させるためのAWSのサービス。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Kendra">
+        <li slot="description">機械学習を活用したエンタープライズ検索サービス。自然言語を使用して複雑な質問に答えることができるインテリジェントな検索サービス。</li>
+        <li slot="description">企業内のさまざまなデータソース (Amazon S3、SharePoint、Salesforceなど) に散在する膨大な情報を、自然言語で検索し、正確で関連性の高い情報を効率的に見つけ出すことができる。</li>
+      </list-definition>
+
+      <list-definition term="AWS Cost and Usage Report">
+        <li slot="description">AWS のコストと使用状況に関する最も詳細なデータを提供するレポート。</li>
+        <li slot="description">このレポートは、AWS のサービス、料金、リザーブドインスタンス、Savings Plans など、あらゆるリソースの使用状況を包括的に把握できる。</li>
+        <li slot="description">指定したAmazon S3バケットに使用状況とコストデータを保存し、そのデータを分析ツールで分析することができる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Elastic Transcoder">
+        <li slot="description">動画や音声ファイルを、様々なデバイス (スマートフォン、タブレット、PCなど) で再生可能な形式に変換するAWSのクラウドサービス。</li>
+      </list-definition>
+
+      <list-definition term="Amazon AFD">
+        <span slot="name">Amazon Fraud Detector</span>
+        <li slot="description">オンラインでの不正行為を自動的に検知するマネージドサービス。不正行為を検出するために機械学習モデルを使用。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Translate">
+        <li slot="description">ニューラル機械翻訳サービス。様々な言語間のテキストを翻訳する。</li>
+        <li slot="description">翻訳結果はキャッシュされず、毎回APIを呼び出す必要がある。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Keyspaces">
+        <li slot="description">Apache Cassandra (カサンドラ) NoSQLデータベースと互換性があり、スケーラブルで可用性の高いデータベース。</li>
+      </list-definition>
+
+      <list-definition term="AWS MGN">
+        <span slot="name">AWS Application Migration Service</span>
+        <li slot="description">オンプレミス環境や仮想環境、パブリッククラウドからAWSへのアプリケーション移行をサポートするサービス。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Polly">
+        <li slot="description">テキストを音声に変換するテキスト読み上げ (TTS) サービス。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Health Dashboard">
+        <li slot="description">AWSのサービスやリソースの健全性に関する情報をリアルタイムで確認できるサービス。</li>
+      </list-definition>
+
+      <list-definition term="AWS Control Tower">
+        <li slot="description">AWS環境のセットアップ、ガバナンス、コンプライアンスを簡単に管理できるサービス。</li>
+      </list-definition>
+
+      <list-definition term="DevOps">
+        <li slot="description">開発 (Development) と運用 (Operations) を組み合わせた言葉で、ソフトウェア開発とIT運用を連携させ、効率的かつ迅速なシステム開発・提供を目指すための考え方や手法、文化のこと。</li>
+      </list-definition>
+
+      <list-definition term="AWS Managed IPSec VPN">
+        <li slot="description">フルマネージドのVPNサービスで、IPSecプロトコルを使用してオンプレミス環境 (データセンターや支社など) とAWS上の仮想プライベートクラウド (VPC) の間で、安全な接続を確立する。</li>
+      </list-definition>
+
+      <list-definition term="AWS Proton">
+        <li slot="description">コンテナとサーバーレスアプリケーション向けに、インフラストラクチャのプロビジョニング、コードデプロイ、モニタリング、更新などのデプロイワークフローを自動化し、管理するためのサービス。</li>
+      </list-definition>
+
+      <list-definition term="AWS X-Ray">
+        <li slot="description">分散アプリケーションのトレースと分析を行うためのサービス。</li>
+      </list-definition>
+
+      <list-definition term="AWS TensorFlow AMI">
+        <span slot="name">AWS TensorFlow Amazon Machine Image</span>
+        <li slot="description">TensorFlowフレームワークをプリインストールしたAMI。</li>
+      </list-definition>
+
+      <list-definition term="AWS DataSync">
+        <li slot="description">オンプレミス環境や他のクラウド環境からAWSストレージサービス (Amazon S3、Amazon EFS、Amazon FSx など) へのデータ移行を高速化、自動化、簡素化するオンラインデータ転送サービス。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Detective">
+        <li slot="description">AWSのリソースからログデータを自動的に収集し、機械学習やグラフ理論を用いて分析することで、潜在的なセキュリティ問題や不審なアクティビティの根本原因を調査し、迅速に特定できるサービス。</li>
+      </list-definition>
+
+      <list-definition term="Amazon OpsWorks">
+        <li slot="description">AWS上でアプリケーションをデプロイ、設定、運用するための設定管理サービス。</li>
+        <li slot="description">ChefやPuppetといった構成管理ツールを活用し、サーバーの構成やアプリケーションのデプロイ、スケーリング、保守などを自動化できる。</li>
+      </list-definition>
+
+      <list-definition term="Amazon SWF">
+        <span slot="name">Amazon Simple Workflow Service</span>
+        <li slot="description">AWSが提供するワークフロー管理サービス。複数のサーバーで実行される処理の連携を管理するためのサービス。</li>
+        <li slot="description">これは、複数サーバー間で実行されるアプリケーションのプロセスを管理し、タスクの順番や振り分けを自動的に制御するのに役立つ。</li>
+      </list-definition>
+
+      <list-definition term="Amazon DocumentDB">
+        <li slot="description">MongoDBとの互換性を持つマネージド型のドキュメント指向データベース。</li>
+      </list-definition>
+
+      <list-definition term="AWS Step Functions">
+        <li slot="description">AWSの様々なサービスをワークフロー形式で連携・自動化できる視覚的なサービス。</li>
+        <li slot="description">分散アプリケーションの構築、プロセス自動化、マイクロサービスのオーケストレーション、データや機械学習パイプラインの作成に役立つ。</li>
+      </list-definition>
+
+      <list-definition term="Amazon Forecast">
+        <li slot="description">機械学習 (ML) を活用したフルマネージド型の時系列予測サービス。</li>
+      </list-definition>
+
+      <list-definition term="SCP">
+        <span slot="name">Service Control Policy</span>
+        <li slot="description">組織のアクセス許可の管理に使用できる組織ポリシーの一種。 SCPでは、組織のIAMユーザーとIAMロールで使用可能な最大アクセス許可を一元的に制御できる。</li>
+      </list-definition>
+
+      <list-definition term="AWS Service Catalog">
+        <li slot="description">AWSで提供されているITサービスのカタログを作成、管理し、利用者に配布できるサービス。</li>
+        <li slot="description">IT管理者が承認された製品 (AWSリソース、例えばEC2インスタンスやRDSデータベースなど) をまとめて管理し、ユーザーが必要な製品を簡単に起動できるポータルを提供する。</li>
+      </list-definition>
+
+      <list-definition term="Amazon ES">
+        <span slot="name">Amazon Elasticsearch Service</span>
+        <li slot="description">Elasticsearchクラスターを簡単にデプロイ、運用、スケールできるフルマネージドサービス。</li>
+        <li slot="description">ElasticsearchとはApache Luceneを基盤として構築された分散検索/分析エンジン。</li>
+      </list-definition>
+
+      <list-definition term="バスチョンホスト">
+        <li slot="description">外部からのアクセスを制限されたネットワーク (通常はDMZ) に配置され、内部ネットワークへのアクセスを中継するセキュリティで保護されたサーバーのこと。</li>
+        <li slot="description">要塞ホストとも呼ばれ、踏み台サーバーの一種として機能。</li>
+      </list-definition>
+
+    </div>
+  </div>
+
+  <script>
+    customElements.define('list-definition', class extends HTMLElement {
+      connectedCallback() {
+        const shadow = this.attachShadow({ mode: 'open' });
+
+        shadow.innerHTML = `
+          <style>
+            *:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+              all: unset;
+              display: revert;
+            }
+            .list-definition {
+              display: flex;
+              flex-direction: column;
+              font-size: 16px;
+              overflow: hidden;
+            }
+            .list-definition.is-active .list-definition__description {
+              display: block;
+            }
+            .list-definition.is-active .list-definition__term {
+              border-radius: 0;
+              border-top-left-radius: 5px;
+              border-top-right-radius: 5px;
+            }
+            .list-definition.is-active .list-definition__icon {
+              transform: translateY(-50%) rotate(180deg);
+            }
+            .list-definition__term {
+              font-weight: 700;
+              border-radius: 5px;
+              background: #EEE;
+              transition: background 0.4s;
+            }
+            .list-definition__button {
+              width: 100%;
+              border-radius: 5px;
+              box-sizing: border-box;
+              position: relative;
+              cursor: pointer;
+              padding: 20px 50px 20px 20px;
+            }
+            .list-definition__button:focus-visible {
+              background: #DDD;
+            }
+            .list-definition__icon {
+              position: absolute;
+              top: 50%;
+              right: 15px;
+              transform: translateY(-50%);
+              transition: transform 0.4s;
+            }
+            .list-definition__description {
+              font-weight: 300;
+              padding: 20px 30px 20px 20px;
+              border: 1px solid #EEE;
+              border-top: none;
+              border-bottom-left-radius: 5px;
+              border-bottom-right-radius: 5px;
+              background: #EEE;
+              display: none;
+            }
+            .list-definition__name {
+              font-style: italic;
+              display: inline-block;
+              margin-bottom: 10px;
+            }
+            .list-definition__items {
+              display: flex;
+              flex-direction: column;
+              gap: 10px 0;
+              padding-left: 20px;
+            }
+            .list-definition__item {
+              text-align: justify;
+            }
+            @media (min-width: 961px) {
+              .list-definition__term:hover {
+                background: #DDD;
+              }
+            }
+            @media (max-width: 960px) {
+              .list-definition__description {
+                padding: 0 30px 20px 20px;
+              }
+            }
+          </style>
+          <dl class="list-definition">
+            <dt class="list-definition__term">
+              <button class="list-definition__button" type="button">
+                ${this.getAttribute('term')}
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="list-definition__icon feather feather-chevron-down">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </dt>
+            <dd class="list-definition__description">
+              <slot name="name" class="list-definition__name"></slot>
+              <ul class="list-definition__items">
+                <slot name="description" class="list-definition__item"></slot>
+              </ul>
+            </dd>
+          </dl>
+        `;
+
+        const list = shadow.querySelector('.list-definition');
+        const button = shadow.querySelector('.list-definition__button');
+        const name = shadow.querySelector('slot[name="name"]');
+
+        if (!this.querySelector('[slot="name"]')) {
+          name.remove();
+        }
+
+        button.addEventListener('click', () => {
+          list.classList.toggle('is-active');
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
