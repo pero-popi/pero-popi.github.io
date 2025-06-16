@@ -85,6 +85,10 @@
         <p slot="text">パブリックなインターネットと分離された、独自のネットワーク環境を構築できる。</p>
       </box-details>
 
+      <box-details summary="VPC エンドポイント">
+        <p slot="text">インターネットゲートウェイやNATゲートウェイを経由することなく安全にVPC内からデータにアクセスできる。VPCからAWSサービスに安全に接続するためのもの。</p>
+      </box-details>
+
       <box-details summary="AWS VPN">
         <p slot="name">Amazon Virtual Private Network</p>
         <p slot="text">AWS上で仮想プライベートネットワークを構築し、社内ネットワークや自宅など、どこからでもAWS上のリソースに安全にアクセスできるようにするサービス。</p>
@@ -219,6 +223,11 @@
         <p slot="text">高速にデータ分析できるのが特徴で、大規模なデータを効率的に処理する。</p>
       </box-details>
 
+      <box-details summary="Amazon Redshift Spectrum">
+        <p slot="name">スペクトラム</p>
+        <p slot="text">Amazon RedshiftからAmazon S3に保存されたデータを、データをRedshiftにロードすることなく直接クエリできる機能。</p>
+      </box-details>
+
       <box-details summary="AWS ELB">
         <p slot="name">AWS Elastic Load Balancing</p>
         <p slot="text">ロードバランシングサービス。アプリケーションへのトラフィックを複数のターゲット (EC2 インスタンス、コンテナなど) に分散することで、サービスの可用性を向上させ、負荷を均一化する。</p>
@@ -245,6 +254,14 @@
       <box-details summary="コネクションドレイニング">
         <p slot="text">バックエンドサーバーの登録解除や削除を行う際に、現在進行中の接続 (コネクション) を切断せずに、処理が完了するまで一定時間待つ機能。これにより、アプリケーションに急な中断が発生するのを避け、ユーザーへの影響を最小限に抑えることができる。</p>
         <p slot="text">ロードバランサーがアプリケーションサーバーを使用不可能と判断した場合に発生する状況を処理するために使用される。</p>
+      </box-details>
+
+      <box-details summary="クロスゾーン負荷分散">
+        <p slot="text">リクエストを複数のアベイラビリティーゾーンに分散する。</p>
+      </box-details>
+
+      <box-details summary="スティッキーセッション">
+        <p slot="text">特定のクライアントからのリクエストが同じサーバーインスタンスに転送されるように設定するもの。</p>
       </box-details>
 
       <box-details summary="Auto Scaling">
@@ -304,10 +321,16 @@
         <p slot="text">インバウンド (ネットワーク外部からサブネット内へのトラフィック) とアウトバウンド (サブネット内からネットワーク外部へのトラフィック) をそれぞれ個別に制御できる。</p>
       </box-details>
 
-      <box-details summary="Web ACL">
-        <p slot="name">Web Access Control List</p>
+      <box-details summary="AWS WAF">
+        <p slot="name">AWS Web Application Firewall</p>
         <p slot="text">AWS WAFで利用される、Webアプリケーションへのアクセスを制御するためのリスト。</p>
         <p slot="text">Web ACLは、ルールをグループ化し、特定の条件に一致するリクエストを許可または拒否することで、Webアプリケーションを保護する。</p>
+      </box-details>
+
+      <box-details summary="Web ACL">
+        <p slot="name">Web Access Control List</p>
+        <p slot="text">Webアプリケーションファイアウォールで、WebサイトやWebアプリケーションをサイバー攻撃から保護するセキュリティサービス。</p>
+        <p slot="text">具体的には、SQLインジェクションやクロスサイトスクリプティング (XSS) などの攻撃を検知・遮断し、Webアプリケーションの脆弱性を悪用した攻撃から保護する。</p>
       </box-details>
 
       <box-details summary="AWS Direct Connect">
@@ -325,7 +348,9 @@
       </box-details>
 
       <box-details summary="AWS Transit Gateway">
+        <p slot="text">Amazon VPCのリソースとオンプレミスネットワークの間のルーティングを容易にするための AWS マネージドサービス</p>
         <p slot="text">複数のVPCやオンプレミスネットワークを相互に接続するためのハブのような機能を提供する。</p>
+        <p slot="text">等コストマルチパスルーティングを使用すると、同じ宛先へのトラフィックを複数の等コストパスに分散でき、VPNトンネルを追加することで、全体的なスループットを向上させることができる。</p>
       </box-details>
 
       <box-details summary="Amazon Data Pipeline">
@@ -393,8 +418,13 @@
         <p slot="text">UI上で簡単な設定をするだけでユーザ管理を実装できる。</p>
       </box-details>
 
+      <box-details summary="Amazon Cognito ユーザープール">
+        <p slot="text">組み込みのユーザー管理とサインアップ/サインイン機能を提供するマネージド型サービス。</p>
+        <p slot="text">API Gatewayと統合することで、APIアクセスの認証や認可を行うことができる。</p>
+      </box-details>
+
       <box-details summary="Amazon Cognito Identity Pool">
-        <p slot="text">AWSのリソースへのアクセスを許可するために、ユーザーに一時的なAWS認証情報を発行するサービス。</p>
+        <p slot="text">外部IDプロバイダーを使用してユーザーを認証する、AWSのリソースへのアクセスを許可するために、ユーザーに一時的なAWS認証情報を発行するサービス。</p>
         <p slot="text">主に、アプリケーションユーザーを認証済みのAWSリソースに接続するために使用される。</p>
       </box-details>
 
@@ -425,6 +455,7 @@
 
       <box-details summary="プレイスメントグループ">
         <p slot="text">同じAWSリージョン内の単一のアベイラビリティーゾーン内で、EC2インスタンスを論理的にグループ分けすることができる機能。</p>
+        <p slot="text">同一の物理的なハードウェアにEC2インスタンスを配置する機能。</p>
       </box-details>
 
       <box-details summary="Amazon CloudWatch">
@@ -485,6 +516,11 @@
         <p slot="text">企業が保有するデータを収集・分析し、可視化することで経営判断や意思決定を支援するソフトウェア。</p>
       </box-details>
 
+      <box-details summary="MFA">
+        <p slot="name">Multi-Factor Authentication</p>
+        <p slot="text">多要素認証の略で、ログイン時にIDとパスワードだけでなく、他の認証要素も組み合わせることでセキュリティを強化する認証方式のこと。</p>
+      </box-details>
+
       <box-details summary="AWS Glue">
         <p slot="text">データ分析、機械学習、アプリケーション開発のために、データの検出、準備、結合を簡単に実行できる、サーバーレスでスケーラブルなデータ統合サービス。</p>
       </box-details>
@@ -493,6 +529,7 @@
         <p slot="name">Amazon Elastic MapReduce</p>
         <p slot="text">AWSが提供するビッグデータ処理のためのマネージドサービス。ビッグデータの処理に使用されるクラスタリングプラットフォーム。</p>
         <p slot="text">Hadoop、Spark、HBase、Presto、Hiveなどの分散データ処理フレームワークを簡単に実行できる。</p>
+        <p slot="text">S3に保存されたアクセスログを、EMRクラスターにデータソースとして指定し、処理することができる。</p>
       </box-details>
 
       <box-details summary="DNSフェイルオーバー">
@@ -511,12 +548,6 @@
       <box-details summary="AWS Trusted Advisor">
         <p slot="text">AWSリソースの利用状況やサービスの利用料金を分析し、コスト最適化やセキュリティリスクの有無などの推奨事項を通知してくれるサービス。</p>
         <p slot="text">コストの削減、可用性とパフォーマンスの向上、セキュリティの改善に役立つ一連のベストプラクティスチェックと推奨事項を提供。</p>
-      </box-details>
-
-      <box-details summary="Amazon KDS">
-        <p slot="name">Amazon Kinesis Data Streams</p>
-        <p slot="text">AWSが提供するリアルタイムのストリーミングデータサービス。大量のストリームデータをリアルタイムに収集し、永続的に保存、処理、分析するために設計されている。</p>
-        <p slot="text">ソースからの大量のクリックストリームデータを収集し、データストリームを永続的に保存し、リアルタイムで複数の消費者アプリケーションに配信することができる。</p>
       </box-details>
 
       <box-details summary="Amazon Glacier">
@@ -542,6 +573,10 @@
         <p slot="text">データベースのクレデンシャル、APIキー、その他のシークレット情報を安全に保存および配布するために設計されたサービス。</p>
         <p slot="text">パスワードローテーション機能を利用することで、指定した期間ごとにシークレットを自動的に変更することができる。</p>
         <p slot="text">データベース認証情報やサーバー上のプライベートキーなどの重要な資格情報を安全に保存し、回転させることができる。</p>
+      </box-details>
+
+      <box-details summary="AWS CloudHSM">
+        <p slot="text">AWSクラウドで暗号化キーを安全に生成、保存、管理できる、マネージド型のハードウェアセキュリティモジュール (HSM) サービス。</p>
       </box-details>
 
       <box-details summary="Amazon FSx">
@@ -657,6 +692,16 @@
         <p slot="text">フリートのインスタンスに対するセキュリティ関連のパッチ適用を自動化するためのサービス。</p>
       </box-details>
 
+      <box-details summary="AWS Directory Service">
+        <p slot="text">AWS上でMicrosoft Active Directory (AD) を運用するためのサービス。</p>
+        <p slot="text">ユーザー、グループ、コンピューターなどの情報を含むディレクトリ機能を提供。</p>
+      </box-details>
+
+      <box-details summary="Amazon AppStream">
+        <p slot="text">AWSが提供する完全マネージド型のアプリケーションストリーミングサービス。デスクトップアプリケーションを、ユーザーが利用しているデバイスにストリーミングすることで、安全かつ簡単に利用できる。</p>
+        <p slot="text">つまり、AWSでアプリケーションを実行し、その画面をユーザーのデバイスに表示するサービスです</p>
+      </box-details>
+
       <box-details summary="ピアリング接続">
         <p slot="text">異なるネットワークや仮想ネットワーク(VPC)同士を互いに認識し、直接接続して通信できるようにすること。</p>
         <p slot="text">具体的には、2つのVirtual Private Cloud (VPC)の間で、プライベートなネットワークを通じてデータがスムーズにやり取りできるようにする仕組み。</p>
@@ -738,10 +783,21 @@
         <p slot="text">完全マネージド型のSFTPサービス。公開エンドポイントを提供でき、Amazon S3などのAWSストレージサービスとシームレスに統合できる。</p>
       </box-details>
 
+      <box-details summary="Amazon Kinesis Data Streams">
+        <p slot="name">Amazon KDS</p>
+        <p slot="text">AWSが提供するリアルタイムのストリーミングデータサービス。大量のストリームデータをリアルタイムに収集し、永続的に保存、処理、分析するために設計されている。</p>
+        <p slot="text">ソースからの大量のクリックストリームデータを収集し、データストリームを永続的に保存し、リアルタイムで複数の消費者アプリケーションに配信することができる。</p>
+      </box-details>
+
       <box-details summary="Amazon Kinesis Data Firehose">
         <p slot="text">フルマネージド型のストリーミングデータ配信サービスで、ユーザーの入力やアクセスログなど、様々なデータソースから生成されたストリーミングデータを、S3やRedshiftなどのデータストアや分析ツールにリアルタイムで配信できる。</p>
         <p slot="text">ログデータのストリーミング配信サービス。指定されたソースからログデータを収集し、AWS管理ストレージ (Amazon S3、Amazon Redshift、Amazon ElasticsearchServiceなど) に自動的に配信することができる。</p>
         <p slot="text">ストリーミングデータを Amazon S3、Amazon Redshift など、データストアに転送するサービス。リアルタイムのデータフィードには適していない。</p>
+      </box-details>
+
+      <box-details summary="Amazon Kinesis Data Analytics">
+        <p slot="text">ストリーミングデータをリアルタイムで分析するためのAWSのサービス。</p>
+        <p slot="text">リアルタイムSQLクエリによる分析・異常検知が可能。</p>
       </box-details>
 
       <box-details summary="AMP">
@@ -966,6 +1022,11 @@
         <p slot="name">Amazon Elasticsearch Service</p>
         <p slot="text">Elasticsearchクラスターを簡単にデプロイ、運用、スケールできるフルマネージドサービス。</p>
         <p slot="text">ElasticsearchとはApache Luceneを基盤として構築された分散検索/分析エンジン。</p>
+      </box-details>
+
+      <box-details summary="AWS CodeDeploy">
+        <p slot="text">アプリケーションのデプロイメントを自動化するためのAWSのマネージドサービス。</p>
+        <p slot="text">Amazon EC2、オンプレミス、Lambda関数、Amazon ECSなどの様々な環境に、アプリケーションを迅速かつ安全にデプロイできる。</p>
       </box-details>
 
       <box-details summary="バスチョンホスト">
