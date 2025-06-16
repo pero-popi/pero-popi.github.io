@@ -17,7 +17,7 @@
       --color-hover: #DDDDDD;
       --font-default: 16px;
       --radius-default: 5px;
-      --transition-duration: 0.4s;
+      --duration-default: 0.4s;
     }
     *:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
       all: unset;
@@ -52,7 +52,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>AWS 用語集</h1>
+    <h1>AWS SAA 用語集</h1>
     <div class="inner">
       <box-details summary="ソリューションアーキテクト">
         <p slot="text">顧客のビジネス課題解決のために、ITシステムの設計や構成を提案し、システムを構築する役割を担うエンジニアのこと。</p>
@@ -1063,7 +1063,7 @@
               list-style: none;
               padding: 20px 50px 20px 20px;
               background: var(--color-bg);
-              transition: background var(--transition-duration);
+              transition: background var(--duration-default);
             }
             .box-details__summary:focus-visible {
               background: var(--color-hover);
@@ -1073,7 +1073,7 @@
               top: 50%;
               right: 15px;
               transform: translateY(-50%);
-              transition: transform var(--transition-duration);
+              transition: transform var(--duration-default);
             }
             .box-details__inner {
               display: flex;
