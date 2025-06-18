@@ -10,13 +10,14 @@
   <link rel="shortcut icon" type="image/x-icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;700" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;700">
   <style>
     :root {
       --color-bg: #EEEEEE;
       --color-hover: #DDDDDD;
       --font-default: 16px;
       --radius-default: 5px;
+      --duration-default: 0.4s;
     }
     *:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
       all: unset;
@@ -51,7 +52,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>AWS 用語集</h1>
+    <h1>AWS SAA 用語集</h1>
     <div class="inner">
       <box-details summary="ソリューションアーキテクト">
         <p slot="text">顧客のビジネス課題解決のために、ITシステムの設計や構成を提案し、システムを構築する役割を担うエンジニアのこと。</p>
@@ -1069,7 +1070,7 @@
               list-style: none;
               padding: 20px 50px 20px 20px;
               background: var(--color-bg);
-              transition: background 0.4s;
+              transition: background var(--duration-default);
             }
             .box-details__summary:focus-visible {
               background: var(--color-hover);
@@ -1079,7 +1080,7 @@
               top: 50%;
               right: 15px;
               transform: translateY(-50%);
-              transition: transform 0.4s;
+              transition: transform var(--duration-default);
             }
             .box-details__inner {
               display: flex;
