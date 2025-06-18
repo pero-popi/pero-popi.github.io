@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AWS SAA 用語集</title>
+  <meta name="description" content="AWS Certified Solutions Architect - Associate の用語集">
+  <link rel="shortcut icon" type="image/x-icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;700">
+  <style>
+    :root {
+      --color-bg: #EEEEEE;
+      --color-hover: #DDDDDD;
+      --font-default: 16px;
+      --radius-default: 5px;
+      --duration-default: 0.4s;
+    }
+    *:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+      all: unset;
+      display: revert;
+    }
+    body {
+      font-family: "Noto Sans JP", sans-serif;
+    }
+    .container {
+      max-width: 1280px;
+      min-width: 320px;
+      margin: 0 auto;
+      padding: 80px 80px 120px;
+      box-sizing: border-box;
+    }
+    .inner {
+      display: flex;
+      flex-direction: column;
+      gap: 50px 0;
+    }
+    .inner:not(:last-child) {
+      margin-bottom: 100px;
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 50px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    @media (max-width: 960px) {
+      .container {
+        padding: 20px 20px 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AWS SAA 用語集</h1>
+    <section class="inner">
+      <h2>サービス・用語</h2>
+
+      <box-details summary="AWS Well-Architected">
+        <p slot="text">運用上の優秀性、セキュリティ、信頼性、パフォーマンス効率、コスト最適化、持続可能性</p>
+      </box-details>
+
+      <box-details summary="AWS AZ">
+        <p slot="name">AWS アベイラビリティーゾーン</p>
+        <p slot="text">リージョン内にある、互いに独立したデータセンター群。</p>
+      </box-details>
+
+      <box-details summary="サブネット">
+        <p slot="text">パブリックサブネット、プライベートサブネット。</p>
+      </box-details>
+
+      <box-details summary="責任共有モデル">
+        <p slot="text">仮想化インフラストラクチャの保護に責任を負う。</p>
+      </box-details>
+
+      <box-details summary="AWS VPC">
+        <p slot="name">AWS Virtual Private Cloud</p>
+        <p slot="text">仮想的ネットワーク。</p>
+      </box-details>
+
+      <box-details summary="VPC エンドポイント">
+        <p slot="text">インターネットゲートウェイ、NATゲートウェイを経由することなくVPC内からデータにアクセス。</p>
+      </box-details>
+
+      <box-details summary="AWS VPN">
+        <p slot="name">Amazon Virtual Private Network</p>
+        <p slot="text">仮想プライベートネットワーク。社内や自宅などからAWS上のリソースにアクセス。</p>
+      </box-details>
+
+      <box-details summary="AWS VPN CloudHub">
+        <p slot="name">Amazon Virtual Private Network CloudHub</p>
+        <p slot="text">各拠点間のVPN接続を管理。</p>
+      </box-details>
+
+      <box-details summary="AWS IAM">
+        <p slot="name">AWS Identity and Access Management</p>
+        <p slot="text">リソースへのアクセスを制御。ユーザー、グループ、ロール、ポリシーを管理。</p>
+      </box-details>
+
+      <box-details summary="Amazon ElastiCache">
+        <p slot="text">インメモリキャッシュ。</p>
+      </box-details>
+
+      <box-details summary="Amazon ElastiCache for Memcached">
+        <p slot="text">Memcached互換のキャッシュエンジン。インメモリキーバリューストア。</p>
+      </box-details>
+
+      <box-details summary="Amazon ElastiCache for Redis">
+        <p slot="text">Redis互換のキャッシュエンジン。</p>
+      </box-details>
+
+      <box-details summary="Amazon DynamoDB">
+        <p slot="text">NoSQLデータベース。自動スケーリング機能。</p>
+      </box-details>
+
+      <box-details summary="Amazon DynamoDB Accelerator">
+        <p slot="name">Amazon DAX</p>
+        <p slot="text">DynamoDBのインメモリキャッシング。読み取り高速化。</p>
+      </box-details>
+
+      <box-details summary="Amazon S3">
+        <p slot="name">Amazon Simple Storage Service</p>
+        <p slot="text">オブジェクトストレージ。無制限ストレージ容量。</p>
+      </box-details>
+
+      <box-details summary="Amazon S3 Data Lake">
+        <p slot="text">S3を基盤とした、データ保存・管理のリポジトリ。</p>
+      </box-details>
+
+      <box-details summary="Amazon S3 File Gateway">
+        <p slot="text">オンプレミスのファイルサーバーをS3に接続。ファイル共有でS3にデータ保存。</p>
+      </box-details>
+
+      <box-details summary="Amazon S3 Transfer Acceleration">
+        <p slot="text">S3バケットへのデータ転送を高速化。CloudFrontのエッジロケーションを活用。</p>
+      </box-details>
+
+      <box-details summary="Amazon Aurora">
+        <p slot="text">リレーショナルデータベース。MySQL、PostgreSQLと互換性。</p>
+      </box-details>
+
+      <box-details summary="Amazon Aurora Replica">
+        <p slot="text">Amazon Auroraの読み取り専用レプリカ。</p>
+      </box-details>
+
+      <box-details summary="Amazon Aurora Serverless">
+        <p slot="text">Auroraを自動的スケーリング。</p>
+      </box-details>
+
+      <box-details summary="Amazon EBS">
+        <p slot="name">Amazon Elastic Block Store</p>
+        <p slot="text">ブロックストレージ。</p>
+      </box-details>
+
+      <box-details summary="Amazon EC2">
+        <p slot="name">Amazon Elastic Compute Cloud</p>
+        <p slot="text">仮想サーバー。</p>
+      </box-details>
+
+      <box-details summary="AMI">
+        <p slot="name">Amazon Machine Image</p>
+        <p slot="text">EC2インスタンスを起動するテンプレート。</p>
+      </box-details>
+
+      <box-details summary="Amazon EC2 dedicated hosts">
+        <p slot="name">デディケイテッド ホスツ</p>
+        <p slot="text">専用ホスト。</p>
+      </box-details>
+
+      <box-details summary="EC2インスタンスのフリート">
+        <p slot="text">オンデマンド、リザーブド、スポットなど、異なるEC2インスタンスを組み合わせて構成されたグループ。</p>
+      </box-details>
+
+      <box-details summary="EC2インスタンスストア">
+        <p slot="text">揮発性ブロックストレージ。</p>
+      </box-details>
+
+      <box-details summary="EC2 Spot Fleet">
+        <p slot="text">スポットインスタンスをまとめたグループ。</p>
+      </box-details>
+
+      <box-details summary="EC2 オンデマンド容量予約">
+        <p slot="text">リージョンとAZでEC2インスタンスの容量を確保。</p>
+      </box-details>
+
+      <box-details summary="AWS Lambda">
+        <p slot="text">イベント発生時にコード実行。FaaS(Function as a Service)</p>
+      </box-details>
+
+      <box-details summary="Amazon SQS">
+        <p slot="name">Amazon Simple Queue Service</p>
+        <p slot="text">メッセージキューイング。自動スケーリング。</p>
+      </box-details>
+
+      <box-details summary="Amazon Redshift">
+        <p slot="text">データ分析。</p>
+      </box-details>
+
+      <box-details summary="Amazon Redshift Spectrum">
+        <p slot="text">RedshiftからS3に保存されたデータを直接クエリ。</p>
+      </box-details>
+
+      <box-details summary="AWS ELB">
+        <p slot="name">AWS Elastic Load Balancing</p>
+        <p slot="text">ロードバランシング。</p>
+      </box-details>
+
+      <box-details summary="AWS ALB">
+        <p slot="name">AWS Application Load Balancer</p>
+        <p slot="text">HTTP/HTTPSトラフィック分散。</p>
+      </box-details>
+
+      <box-details summary="AWS NLB">
+        <p slot="name">AWS Network Load Balancer</p>
+        <p slot="text">TCP/UDPトラフィック分散。</p>
+      </box-details>
+
+      <box-details summary="AWS GWLB">
+        <p slot="name">AWS Gateway Load Balancer</p>
+        <p slot="text">サードパーティ(ファイアウォール、侵入検知システムなど)を、デプロイ、スケーリング、管理。</p>
+      </box-details>
+
+      <box-details summary="クロスゾーン負荷分散">
+        <p slot="text">リクエストを複数のAZに分散。</p>
+      </box-details>
+
+      <box-details summary="Auto Scaling">
+        <p slot="text">リソースを自動的に割り当て。</p>
+      </box-details>
+
+      <box-details summary="Auto Scaling Group">
+        <p slot="text">自動スケーリングと管理の目的での論理グループ。</p>
+      </box-details>
+
+      <box-details summary="スループット">
+        <p slot="text">一定時間あたりに転送できるデータ量。</p>
+      </box-details>
+
+      <box-details summary="NATゲートウェイ">
+        <p slot="name">Network Address Translation Gateway</p>
+        <p slot="text">プライベートIPをパブリックIPに変換。直接インターネットに公開されることなく、外部サービスにアクセス。</p>
+      </box-details>
+
+      <box-details summary="Amazon RDS">
+        <p slot="name">Amazon Relational Database Service</p>
+        <p slot="text">リレーショナルデータベース。MySQL、PostgreSQL、Oracle、SQL Server</p>
+      </box-details>
+
+      <box-details summary="Amazon RDS Proxy">
+        <p slot="text">接続プールを利用するマネージドプロキシ。</p>
+      </box-details>
+
+      <box-details summary="AWS CLI">
+        <p slot="name">AWS Command Line Interface</p>
+        <p slot="text">AWSをコマンドラインから操作。</p>
+      </box-details>
+
+      <box-details summary="Amazon Lightsail">
+        <p slot="text">初心者でも簡単にサーバーを立ち上げ、ウェブサイトやアプリケーション構築。</p>
+      </box-details>
+
+      <box-details summary="セキュリティグループ">
+        <p slot="text">ステートフル。インバウンドを許可するとアウトバウンドも自動的に許可するAllow‐onlyモデル。</p>
+      </box-details>
+
+      <box-details summary="ネットワークACL">
+        <p slot="name">Network Access Control List</p>
+        <p slot="text">サブネットレベルでインバウンドとアウトバウンドのトラフィックを許可または拒否。インバウンドとアウトバウンドを個別に制御。</p>
+      </box-details>
+
+      <box-details summary="AWS WAF">
+        <p slot="name">AWS Web Application Firewall</p>
+        <p slot="text">Webアプリケーションをサイバー攻撃から保護。</p>
+      </box-details>
+
+      <box-details summary="Web ACL">
+        <p slot="name">Web Access Control List</p>
+        <p slot="text">アクセス制御。AWS WAFの機能。</p>
+      </box-details>
+
+      <box-details summary="AWS Direct Connect">
+        <p slot="text">オンプレミスとAWSクラウドを、専用のネットワーク回線で接続。</p>
+      </box-details>
+
+      <box-details summary="Amazon API Gateway">
+        <p slot="text">APIツール。REST/HTTP、WebSocket APIをサポート。</p>
+      </box-details>
+
+      <box-details summary="Amazon EventBridge">
+        <p slot="text">スケジュールされたルールをLambda関数にマッピング。</p>
+      </box-details>
+
+      <box-details summary="AWS Transit Gateway">
+        <p slot="text">複数VPCやオンプレミスネットワークを相互接続。</p>
+      </box-details>
+
+      <box-details summary="Amazon Data Pipeline">
+        <p slot="text">DynamoDBデータをS3へエクスポート、S3データをDynamoDBへインポート。</p>
+      </box-details>
+
+      <box-details summary="プロビジョニング">
+        <p slot="text">インフラをユーザーが利用できる状態にする。</p>
+      </box-details>
+
+      <box-details summary="インフラストラクチャ">
+        <p slot="text">ハードウェア、ソフトウェア、ネットワークなど。</p>
+      </box-details>
+
+      <box-details summary="AWS CloudFormation">
+        <p slot="text">リソースをコード定義。テンプレート(JSON、YAML)に基づいてスタック作成。</p>
+      </box-details>
+
+      <box-details summary="AWS CloudFormation StackSets">
+        <p slot="text">テンプレートを複数のAWSアカウントおよびリージョンにデプロイ。</p>
+      </box-details>
+
+      <box-details summary="Elastic IP">
+        <p slot="text">静的パブリックIPv4アドレス。</p>
+      </box-details>
+
+      <box-details summary="Amazon EFS">
+        <p slot="name">Amazon Elastic File System</p>
+        <p slot="text">ファイルストレージ。</p>
+      </box-details>
+
+      <box-details summary="Amazon ECS">
+        <p slot="text">コンテナをデプロイ、管理、スケーリング。</p>
+      </box-details>
+
+      <box-details summary="AWS Fargate">
+        <p slot="text">サーバーレスコンテナ実行。</p>
+      </box-details>
+
+      <box-details summary="Amazon ECS on Fargate">
+        <p slot="text">ECSのサーバーレスコンテナ実行。</p>
+      </box-details>
+
+      <box-details summary="フェイルオーバー">
+        <p slot="text">システム障害時に、自動的に予備システムに切り替え。</p>
+      </box-details>
+
+      <box-details summary="Amazon Route 53">
+        <p slot="text">DNS。フェイルオーバーオプション。</p>
+      </box-details>
+
+      <box-details summary="Amazon Cognito">
+        <p slot="text">ユーザ認証機能。</p>
+      </box-details>
+
+      <box-details summary="Amazon Cognito ユーザープール">
+        <p slot="text">APIアクセスの認証、認可。</p>
+      </box-details>
+
+      <box-details summary="Amazon Cognito Identity Pool">
+        <p slot="text">外部IDプロバイダー認証。</p>
+      </box-details>
+
+      <box-details summary="Amazon Cognito ユーザープール オーソライザー">
+        <p slot="text">トークンの有効性を検証。</p>
+      </box-details>
+
+      <box-details summary="エッジロケーション">
+        <p slot="text">なるべくユーザーに近いネットワークでのアクセスを提供。</p>
+      </box-details>
+
+      <box-details summary="Amazon CloudFront">
+        <p slot="text">CDN。</p>
+      </box-details>
+
+      <box-details summary="レイテンシ">
+        <p slot="text">通信の遅延時間。</p>
+      </box-details>
+
+      <box-details summary="AWS Global Accelerator">
+        <p slot="text">TCP/UDPトラフィックを最適ルーティング。</p>
+      </box-details>
+
+      <box-details summary="プレイスメントグループ">
+        <p slot="text">単一AZ内で、EC2インスタンスを論理的にグループ分け。同一物理ハードウェアにEC2インスタンスを配置。</p>
+      </box-details>
+
+      <box-details summary="Amazon CloudWatch">
+        <p slot="text">モニタリング。メトリクスを収集して監視。</p>
+      </box-details>
+
+      <box-details summary="Amazon CloudWatch Synthetics">
+        <p slot="text">ユーザーと同じアクションを実行、パフォーマンスや可用性をモニタリング。</p>
+      </box-details>
+
+      <box-details summary="Amazon CloudWatch Logs">
+        <p slot="text">ログデータの収集、監視、分析。</p>
+      </box-details>
+
+      <box-details summary="Amazon CloudWatch Container Insights">
+        <p slot="text">EKSクラスターのメトリクスとログの収集、集約、要約。</p>
+      </box-details>
+
+      <box-details summary="IDフェデレーション">
+        <p slot="text">ユーザーが1つのドメインで認証。</p>
+      </box-details>
+
+      <box-details summary="AWS Certificate Manager">
+        <p slot="name">ACM</p>
+        <p slot="text">SSL/TLS証明書。</p>
+      </box-details>
+
+      <box-details summary="Amazon Athena">
+        <p slot="text">SQLクエリを使ってS3のデータを対話形式で分析。サーバーレス。</p>
+      </box-details>
+
+      <box-details summary="インプレースクエリ">
+        <p slot="text">オブジェクトストレージで、直接クエリを実行。</p>
+      </box-details>
+
+      <box-details summary="AWS Glue">
+        <p slot="text">データ統合。</p>
+      </box-details>
+
+      <box-details summary="Amazon EMR">
+        <p slot="name">Amazon Elastic MapReduce</p>
+        <p slot="text">ビッグデータ処理</p>
+      </box-details>
+
+      <box-details summary="DNSフェイルオーバー">
+        <p slot="text">メインサーバーに障害発生時、自動的にバックアップサーバーに切り替える仕組み。</p>
+      </box-details>
+
+      <box-details summary="AWS CloudTrail">
+        <p slot="text">ユーザーとAPI操作をログに記録。</p>
+      </box-details>
+
+      <box-details summary="AWS Trusted Advisor">
+        <p slot="text">利用状況や利用料金を分析、コスト最適化やセキュリティリスクなどの推奨事項を通知。</p>
+      </box-details>
+
+      <box-details summary="Amazon Glacier">
+        <p slot="text">アーカイブや長期バックアップのクラウドストレージ。</p>
+      </box-details>
+
+      <box-details summary="AWS Import/Export">
+        <p slot="text">オンプレミスや他のクラウド環境からAWSにデータを移行。</p>
+      </box-details>
+
+      <box-details summary="VM Import/Export">
+        <p slot="text">仮想マシンイメージをAWSにインポート。S3にアップロードし、AMIに変換。</p>
+      </box-details>
+
+      <box-details summary="Amazon SES">
+        <p slot="name">Amazon Simple Email Service</p>
+        <p slot="text">Eメール送信。</p>
+      </box-details>
+
+      <box-details summary="AWS Secrets Manager">
+        <p slot="text">クレデンシャル、APIキー、シークレット情報を保存、配布。パスワードローテーション機能。</p>
+      </box-details>
+
+      <box-details summary="AWS CloudHSM">
+        <p slot="text">暗号化キーを生成、保存、管理。</p>
+      </box-details>
+
+      <box-details summary="Amazon FSx">
+        <p slot="text">高性能ファイルシステム。</p>
+      </box-details>
+
+      <box-details summary="Amazon FSx for Lustre">
+        <p slot="text">Lustreのフルマネージド。</p>
+      </box-details>
+
+      <box-details summary="AWS Snowball">
+        <p slot="text">大規模データをAWSに物理的に移行。</p>
+      </box-details>
+
+      <box-details summary="AWS Snowball Edge">
+        <p slot="text">エッジロケーションでデータをローカルに処理。</p>
+      </box-details>
+
+      <box-details summary="AWS Snowball Edge Storage Optimized">
+        <p slot="text">大規模データをオンプレミスからAWSに転送するデバイス。</p>
+      </box-details>
+
+      <box-details summary="Amazon EKS">
+        <p slot="name">Amazon Elastic Kubernetes Service</p>
+        <p slot="text">Kubernetesのマネージド。</p>
+      </box-details>
+
+      <box-details summary="AWS Elastic Beanstalk">
+        <p slot="text">デプロイと管理を自動化。</p>
+      </box-details>
+
+      <box-details summary="AWS Shield">
+        <p slot="text">DDoS攻撃の防御。</p>
+      </box-details>
+
+      <box-details summary="ARN">
+        <p slot="name">Amazon Resource Name</p>
+        <p slot="text">リソースやサービスの参照に使用。</p>
+      </box-details>
+
+      <box-details summary="AWS Organizations">
+        <p slot="text">複数のAWSアカウントを一元管理。</p>
+      </box-details>
+
+      <box-details summary="Amazon GuardDuty">
+        <p slot="text">脅威検出。セキュリティ監視とログ分析。</p>
+      </box-details>
+
+      <box-details summary="AWS Firewall Manager">
+        <p slot="text">複数のAWSアカウントとリソースをセキュリティポリシーで一元管理。</p>
+      </box-details>
+
+      <box-details summary="AWS Network Firewall">
+        <p slot="text">AWSクラウド内のトラフィックを検査、フィルタリングするために、ルールを作成。</p>
+      </box-details>
+
+      <box-details summary="Amazon QuickSight">
+        <p slot="text">視覚化ダッシュボード。</p>
+      </box-details>
+
+      <box-details summary="Amazon Inspector">
+        <p slot="text">セキュリティ脆弱性、ソフトウェア脆弱性を自動的検出。</p>
+      </box-details>
+
+      <box-details summary="AWS Config">
+        <p slot="text">リソースの設定変更を記録、評価、監査。</p>
+      </box-details>
+
+      <box-details summary="AWS App Mesh">
+        <p slot="text">MSアプリケーション間の通信を容易にするサービスメッシュ。</p>
+      </box-details>
+
+      <box-details summary="Amazon AppFlow">
+        <p slot="text">SaaSアプリケーションとAWSサービス間のデータを安全に転送。</p>
+      </box-details>
+
+      <box-details summary="AWS Database Migration Service">
+        <p slot="name">AWS DMS</p>
+        <p slot="text">さまざまなデータストアを移行。</p>
+      </box-details>
+
+      <box-details summary="AWS Systems Manager">
+        <p slot="text">AWSクラウド、オンプレミス、マルチクラウド環境のシステムを統合管理。</p>
+      </box-details>
+
+      <box-details summary="AWS Systems Manager Patch Manager">
+        <p slot="text">セキュリティ関連のパッチ適用を自動化。</p>
+      </box-details>
+
+      <box-details summary="AWS Directory Service">
+        <p slot="text">Microsoft Active Directoryを運用。</p>
+      </box-details>
+
+      <box-details summary="Amazon AppStream">
+        <p slot="text">AWSでアプリケーションを実行し、その画面をユーザーのデバイスに表示。</p>
+      </box-details>
+
+      <box-details summary="ピアリング接続">
+        <p slot="text">異なるネットワークや仮想ネットワーク同士を互いに認識し、直接プライベート接続して通信。</p>
+      </box-details>
+
+      <box-details summary="Amazon Rekognition">
+        <p slot="name">リコグニション</p>
+        <p slot="text">画像・動画分析。</p>
+      </box-details>
+
+      <box-details summary="Amazon Comprehend">
+        <p slot="name">コンプリヘンド</p>
+        <p slot="text">自然言語処理。</p>
+      </box-details>
+
+      <box-details summary="Amazon Comprehend Medical">
+        <p slot="text">医療テキストから情報抽出。</p>
+      </box-details>
+
+      <box-details summary="AWS Resource Access Manager">
+        <p slot="name">AWS RAM</p>
+        <p slot="text">AWSリソースを複数のAWSアカウントや組織単位で共有。</p>
+      </box-details>
+
+      <box-details summary="Amazon SageMaker">
+        <p slot="text">機械学習。</p>
+      </box-details>
+
+      <box-details summary="Amazon Textract">
+        <p slot="text">スキャンしたドキュメントからテキストデータを自動的に抽出する機械学習。</p>
+      </box-details>
+
+      <box-details summary="AWS Backup">
+        <p slot="text">一元化してバックアップ・復元。</p>
+      </box-details>
+
+      <box-details summary="Amazon MQ">
+        <p slot="text">メッセージブローカー。</p>
+      </box-details>
+
+      <box-details summary="AWS Storage Gateway">
+        <p slot="text">オンプレミスのストレージをAWSのクラウドストレージに接続。</p>
+      </box-details>
+
+      <box-details summary="Amazon Macie">
+        <p slot="name">メイシー</p>
+        <p slot="text">機密データの検出と保護。</p>
+      </box-details>
+
+      <box-details summary="AWS PrivateLink">
+        <p slot="text">インターネット接続せずにプライベート接続ができる。</p>
+      </box-details>
+
+      <box-details summary="AWS Key Management Service">
+        <p slot="name">AWS KMS</p>
+        <p slot="text">データの暗号化に使用するキーを管理。</p>
+      </box-details>
+
+      <box-details summary="Service Control Policy">
+        <p slot="name">SCP</p>
+        <p slot="text">組織単位またはAWS全体の組織に対して設定できるポリシー。</p>
+      </box-details>
+
+      <box-details summary="AWS Transfer Family">
+        <p slot="text">SFTP。</p>
+      </box-details>
+
+      <box-details summary="Amazon Kinesis Data Streams">
+        <p slot="name">Amazon KDS</p>
+        <p slot="text">大量のストリームデータをリアルタイムに収集、保存、処理、分析。</p>
+      </box-details>
+
+      <box-details summary="Amazon Kinesis Data Firehose">
+        <p slot="text">ストリーミングデータをリアルタイムで配信。</p>
+      </box-details>
+
+      <box-details summary="Amazon Kinesis Data Analytics">
+        <p slot="text">ストリーミングデータをリアルタイムSQLクエリで分析、異常検知。</p>
+      </box-details>
+
+      <box-details summary="Amazon Managed Service for Prometheus">
+        <p slot="name">AMP</p>
+        <p slot="text">Prometheus互換。大規模コンテナ環境のモニタリング。</p>
+      </box-details>
+
+      <box-details summary="AWS Data Exchange">
+        <p slot="text">サードパーティーのデータ製品を検索、サブスクライブ、使用。</p>
+      </box-details>
+
+      <box-details summary="AWS Serverless Application Repository">
+        <p slot="text">サーバーレスアプリケーション用のマネージド型リポジトリ。</p>
+      </box-details>
+
+      <box-details summary="Amazon Managed Grafana">
+        <p slot="text">Grafanaのフルマネージド。メトリクス、ログ、トレースなどのデータを収集・可視化。</p>
+      </box-details>
+
+      <box-details summary="AWS Batch">
+        <p slot="text">バッチ。</p>
+      </box-details>
+
+      <box-details summary="Amazon Lex">
+        <p slot="text">チャットボットや音声ボットを開発するツール。</p>
+      </box-details>
+
+      <box-details summary="Amazon QLDB">
+        <p slot="name">Amazon Quantum Ledger Database</p>
+        <p slot="text">台帳データベース。金融取引やサプライチェーン管理。</p>
+      </box-details>
+
+      <box-details summary="AWS Security Hub">
+        <p slot="text">マルチテナント。</p>
+      </box-details>
+
+      <box-details summary="AWS Lake Formation">
+        <p slot="text">データレイクを構築、保護、管理。</p>
+      </box-details>
+
+      <box-details summary="AWS License Manager">
+        <p slot="text">ソフトウェアライセンス管理。</p>
+      </box-details>
+
+      <box-details summary="AWS Application Discovery Service">
+        <p slot="name">AWS ADS</p>
+        <p slot="text">オンプレミスからAWSへの移行計画を支援。</p>
+      </box-details>
+
+      <box-details summary="VIF">
+        <p slot="name">仮想インターフェース。</p>
+      </box-details>
+
+      <box-details summary="Amazon Pinpoint">
+        <p slot="text">顧客エンゲージメントサービス。</p>
+      </box-details>
+
+      <box-details summary="AWS Compute Optimizer">
+        <p slot="text">リソースの選定と配置に関する推奨事項を提供。</p>
+      </box-details>
+
+      <box-details summary="AWS Device Farm">
+        <p slot="text">デスクトップブラウザとモバイルデバイスでテスト。</p>
+      </box-details>
+
+      <box-details summary="AWS Outposts">
+        <p slot="text">AWSをオンプレミス環境に拡張。</p>
+      </box-details>
+
+      <box-details summary="Amazon Managed Streaming for Apache Kafka">
+        <p slot="name">Amazon MSK</p>
+        <p slot="text">Apache Kafkaのマネージド。</p>
+      </box-details>
+
+      <box-details summary="AWS Amplify">
+        <p slot="text">ウェブアプリケーションやモバイルアプリケーションを構築、デプロイ、ホスティング。</p>
+      </box-details>
+
+      <box-details summary="AWS Artifact">
+        <p slot="text">認定証明書や監査報告書をセルフサービスでダウンロードできるポータルを提供。契約文書の管理。</p>
+      </box-details>
+
+      <box-details summary="AWS Audit Manager">
+        <p slot="text">コンプライアンス違反チェック。</p>
+      </box-details>
+
+      <box-details summary="AWS AppSync">
+        <p slot="text">GraphQLを活用し、複数のデータソースを統合し、アクセス、操作。</p>
+      </box-details>
+
+      <box-details summary="AWS Elastic Disaster Recovery">
+        <p slot="name">AWS DRS</p>
+        <p slot="text">オンプレミスやクラウドのアプリケーションを復旧。</p>
+      </box-details>
+
+      <box-details summary="Amazon Kendra">
+        <p slot="text">自然言語を使用して複雑な質問に答えることができる検索サービス。</p>
+      </box-details>
+
+      <box-details summary="AWS Cost and Usage Report">
+        <p slot="text">AWSのコストと使用状況に関するレポート。</p>
+      </box-details>
+
+      <box-details summary="Amazon Elastic Transcoder">
+        <p slot="text">動画、音声ファイルを変換。</p>
+      </box-details>
+
+      <box-details summary="Amazon Fraud Detector">
+        <p slot="text">オンラインでの不正行為を自動的に検知。</p>
+      </box-details>
+
+      <box-details summary="Amazon Translate">
+        <p slot="text">機械翻訳。</p>
+      </box-details>
+
+      <box-details summary="Amazon Keyspaces">
+        <p slot="text">Apache Cassandra NoSQLデータベースと互換性。</p>
+      </box-details>
+
+      <box-details summary="AWS Application Migration Service">
+        <p slot="name">AWS MGN</p>
+        <p slot="text">オンプレミスや仮想環境、パブリッククラウドからAWSへのアプリケーション移行をサポート。</p>
+      </box-details>
+
+      <box-details summary="Amazon Polly">
+        <p slot="text">テキストを音声に変換。</p>
+      </box-details>
+
+      <box-details summary="Amazon Health Dashboard">
+        <p slot="text">サービスやリソースの健全性に関する情報をリアルタイムで確認。</p>
+      </box-details>
+
+      <box-details summary="AWS Control Tower">
+        <p slot="text">セットアップ、ガバナンス、コンプライアンスを管理。</p>
+      </box-details>
+
+      <box-details summary="AWS Managed IPSec VPN">
+        <p slot="text">IPSecプロトコルを使用してオンプレミスとVPCの接続。</p>
+      </box-details>
+
+      <box-details summary="AWS Proton">
+        <p slot="text">コンテナとサーバーレスアプリケーション向けにデプロイワークフローを自動化、管理。</p>
+      </box-details>
+
+      <box-details summary="AWS X-Ray">
+        <p slot="text">分散アプリケーションのトレースと分析。</p>
+      </box-details>
+
+      <box-details summary="AWS TensorFlow AMI">
+        <p slot="name">AWS TensorFlow Amazon Machine Image</p>
+        <p slot="text">TensorFlowフレームワークをプリインストールしたAMI。</p>
+      </box-details>
+
+      <box-details summary="AWS DataSync">
+        <p slot="text">オンプレミスや他のクラウド環境からストレージサービスへのデータ移行を高速化、自動化、簡素化する転送サービス。</p>
+      </box-details>
+
+      <box-details summary="Amazon Detective">
+        <p slot="text">ログデータを自動収集し、機械学習やグラフ理論を用いて分析。</p>
+      </box-details>
+
+      <box-details summary="Amazon OpsWorks">
+        <p slot="text">アプリケーションをデプロイ、設定、運用するための設定管理サービス。</p>
+      </box-details>
+
+      <box-details summary="Amazon Simple Workflow Service">
+        <p slot="name">Amazon SWF</p>
+        <p slot="text">ワークフロー管理サービス。複数のサーバーで実行される処理の連携を管理。</p>
+      </box-details>
+
+      <box-details summary="Amazon DocumentDB">
+        <p slot="text">MongoDBと互換性。</p>
+      </box-details>
+
+      <box-details summary="AWS Step Functions">
+        <p slot="text">サービスをワークフロー形式で連携・自動化できる視覚的サービス。</p>
+      </box-details>
+
+      <box-details summary="Amazon Forecast">
+        <p slot="text">時系列予測サービス。</p>
+      </box-details>
+
+      <box-details summary="Amazon Elasticsearch Service">
+        <p slot="name">Amazon ES</p>
+        <p slot="text">分散検索/分析エンジン。</p>
+      </box-details>
+
+      <box-details summary="AWS CodeDeploy">
+        <p slot="text">デプロイメントを自動化。</p>
+      </box-details>
+    </section>
+
+    <section class="inner">
+      <h2>その他</h2>
+
+      <box-details summary="スティッキーセッション">
+        <p slot="text">特定のクライアントからのリクエストが同じサーバーインスタンスに転送されるように設定。</p>
+      </box-details>
+
+      <box-details summary="LDAP">
+        <p slot="name">Lightweight Directory Access Protocol</p>
+        <p slot="text">エルダップ。ネットワーク内でユーザー、グループ、コンピュータなどの情報を一元管理するための標準プロトコル。</p>
+      </box-details>
+
+      <box-details summary="BIツール">
+        <p slot="name">Business Intelligence Tool</p>
+        <p slot="text">企業が保有するデータを収集・分析し、可視化することで経営判断や意思決定を支援するソフトウェア。</p>
+      </box-details>
+
+      <box-details summary="MFA">
+        <p slot="name">Multi-Factor Authentication</p>
+        <p slot="text">多要素認証。</p>
+      </box-details>
+
+      <box-details summary="Hadoop">
+        <p slot="text">膨大なデータを複数のマシンに分散して処理。</p>
+      </box-details>
+
+      <box-details summary="SMB ファイルサーバー">
+        <p slot="name">Server Message Block ファイルサーバー</p>
+        <p slot="text">ネットワーク上でファイルを共有するためのプロトコルと、その機能を実装したサーバー。</p>
+      </box-details>
+
+      <box-details summary="CIDR">
+        <p slot="name">Classless Inter-Domain Routing</p>
+        <p slot="text">IPアドレスをより効率的に割り当て、管理するための技術。</p>
+      </box-details>
+
+      <box-details summary="DevOps">
+        <p slot="text">開発 (Development) と運用 (Operations) を組み合わせた言葉。</p>
+      </box-details>
+
+      <box-details summary="コネクションドレイニング">
+        <p slot="text">バックエンドサーバーの登録解除や削除を行う際に、現在進行中の接続を切断せずに、処理が完了するまで一定時間待つ機能。</p>
+      </box-details>
+
+      <box-details summary="データベースクラスタ">
+        <p slot="text">複数のデータベースサーバが連携して一つのデータベースとして動作する仕組み。</p>
+      </box-details>
+
+      <box-details summary="IOPS">
+        <p slot="name">Input/Output Operations Per Second</p>
+        <p slot="text">ストレージが1秒あたりに処理できる入出力操作の数を表す性能指標。</p>
+      </box-details>
+
+      <box-details summary="ディザスタリカバリポリシー">
+        <p slot="text">災害やシステム障害によって引き起こされるダウンタイムを最小限に抑え、業務を迅速に再開できるようにするための、具体的な対策や手順をまとめた文書。</p>
+      </box-details>
+
+      <box-details summary="RAIDコンフィギュレーション">
+        <p slot="text">複数のハードディスクドライブを組み合わせて、1つのディスクアレイ (ディスクグループ) として扱う構成のこと。これにより、データの冗長性やパフォーマンスの向上を図る。</p>
+        <p slot="text">RAID 0 (ストライピング) により、複数のディスクドライブにデータを分散して並列書き込みや読み込みを行うことで、I/O性能が向上。</p>
+        <p slot="text">RAID 1 (ミラーリング) はデータの冗長性を提供するが、読み取りに対してのみ性能が向上する。</p>
+      </box-details>
+
+      <box-details summary="バスチョンホスト">
+        <p slot="text">外部からのアクセスを制限されたネットワーク (通常はDMZ) に配置され、内部ネットワークへのアクセスを中継するセキュリティで保護されたサーバーのこと。</p>
+        <p slot="text">要塞ホストとも呼ばれ、踏み台サーバーの一種として機能。</p>
+      </box-details>
+    </section>
+  </div>
+
+  <script>
+    customElements.define('box-details', class extends HTMLElement {
+      connectedCallback() {
+        const shadow = this.attachShadow({ mode: 'closed' });
+
+        shadow.innerHTML = `
+          <style>
+            .box-details {
+              font-size: var(--font-default);
+              font-weight: 300;
+            }
+            .box-details[open] .box-details__summary {
+              border-radius: 0;
+              border-top-left-radius: var(--radius-default);
+              border-top-right-radius: var(--radius-default);
+            }
+            .box-details[open] .box-details__icon {
+              transform: translateY(-50%) rotate(180deg);
+            }
+            .box-details__summary {
+              font-weight: 700;
+              border-radius: var(--radius-default);
+              position: relative;
+              list-style: none;
+              padding: 20px 50px 20px 20px;
+              background: var(--color-bg);
+              transition: background var(--duration-default);
+            }
+            .box-details__summary:focus-visible {
+              background: var(--color-hover);
+            }
+            .box-details__icon {
+              position: absolute;
+              top: 50%;
+              right: 15px;
+              transform: translateY(-50%);
+              transition: transform var(--duration-default);
+            }
+            .box-details__inner {
+              display: flex;
+              flex-direction: column;
+              gap: 20px 0;
+              padding: 20px;
+              border-bottom-left-radius: var(--radius-default);
+              border-bottom-right-radius: var(--radius-default);
+              background: var(--color-bg);
+            }
+            .box-details__name {
+              font-style: italic;
+            }
+            .box-details__text {
+              text-align: justify;
+            }
+            @media (min-width: 961px) {
+              .box-details__summary {
+                cursor: pointer;
+              }
+              .box-details__summary:hover {
+                background: var(--color-hover);
+              }
+            }
+          </style>
+          <details class="box-details">
+            <summary class="box-details__summary">
+              ${this.getAttribute('summary')}
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="box-details__icon feather feather-chevron-down">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="box-details__inner">
+              <slot name="name" class="box-details__name"></slot>
+              <slot name="text" class="box-details__text"></slot>
+            </div>
+          </details>
+        `;
+
+        const name = shadow.querySelector('slot[name="name"]');
+
+        if (!this.querySelector('[slot="name"]')) {
+          name.remove();
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
