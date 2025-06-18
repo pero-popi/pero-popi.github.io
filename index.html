@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>AWS SAA 用語集</title>
-  <meta name="description" content="AWS Certified Solutions Architect - Associate の用語集 1.0.0">
+  <meta name="description" content="AWS Certified Solutions Architect - Associate の用語集">
   <link rel="shortcut icon" type="image/x-icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,10 +38,17 @@
       flex-direction: column;
       gap: 50px 0;
     }
+    .inner:not(:last-child) {
+      margin-bottom: 100px;
+    }
     h1 {
       font-size: 30px;
       font-weight: 700;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
     }
     @media (max-width: 960px) {
       .container {
@@ -53,7 +60,9 @@
 <body>
   <div class="container">
     <h1>AWS SAA 用語集</h1>
-    <div class="inner">
+    <section class="inner">
+      <h2>サービス・用語</h2>
+
       <box-details summary="ソリューションアーキテクト">
         <p slot="text">顧客のビジネス課題解決のために、ITシステムの設計や構成を提案し、システムを構築する役割を担うエンジニアのこと。</p>
         <p slot="text">顧客のニーズを理解し、技術的な側面とビジネス的な側面の両方を考慮してソリューションを設計・提案し、実装や運用にも関与することがある。</p>
@@ -126,8 +135,8 @@
         <p slot="text">自動スケーリング機能、高速で柔軟なデータベースとして、大規模なデータセットと高いスケーラビリティが求められるアプリケーション向け。</p>
       </box-details>
 
-      <box-details summary="Amazon DAX">
-        <p slot="name">Amazon DynamoDB Accelerator</p>
+      <box-details summary="Amazon DynamoDB Accelerator">
+        <p slot="name">Amazon DAX</p>
         <p slot="text">DynamoDBのインメモリキャッシングサービス。</p>
         <p slot="text">DAXを使用すると、DynamoDBへの読み取り要求を高速化できる。</p>
       </box-details>
@@ -259,10 +268,6 @@
 
       <box-details summary="クロスゾーン負荷分散">
         <p slot="text">リクエストを複数のアベイラビリティーゾーンに分散する。</p>
-      </box-details>
-
-      <box-details summary="スティッキーセッション">
-        <p slot="text">特定のクライアントからのリクエストが同じサーバーインスタンスに転送されるように設定するもの。</p>
       </box-details>
 
       <box-details summary="Auto Scaling">
@@ -479,19 +484,13 @@
         <p slot="text">Amazon EKSクラスターのメトリクスとログの収集、集約、要約に使用できるマネージドサービス。</p>
       </box-details>
 
-      <box-details summary="LDAP">
-        <p slot="name">Lightweight Directory Access Protocol</p>
-        <p slot="text">エルダップ。ネットワーク内でユーザー、グループ、コンピュータなどの情報を一元管理するための標準プロトコル。</p>
-        <p slot="text">ディレクトリサービスと呼ばれる情報データベースにアクセスし、認証やアクセス制御、リソースの検索を行うための基盤として広く利用されている。</p>
-      </box-details>
-
       <box-details summary="IDフェデレーション">
         <p slot="text">異なるドメインや組織間でユーザーID情報を共有し、相互に認証を行う仕組み。</p>
         <p slot="text">ユーザーが1つのドメインで認証することで、他のドメインのリソースにアクセスできるようになる。</p>
       </box-details>
 
-      <box-details summary="ACM">
-        <p slot="name">AWS Certificate Manager</p>
+      <box-details summary="AWS Certificate Manager">
+        <p slot="name">ACM</p>
         <p slot="text">AWS内でSSL/TLS証明書をプロビジョニング、管理、デプロイするためのサービス。</p>
         <p slot="text">Webサイトやアプリケーションの安全な通信を確保するために不可欠なSSL/TLS証明書を、手動で行う手間を省き、自動で発行、更新できる。</p>
         <p slot="text">無料でSSL証明書を発行でき、発行した証明書をEC2インスタンスの前段に配置されたElastic Load Balancing (ELB) にインストールすることでSSL通信が可能になる。</p>
@@ -512,16 +511,6 @@
         <p slot="text">これにより、S3に保存されたデータを分析プラットフォームにコピーせずに、S3の中で直接分析を完了できる。</p>
       </box-details>
 
-      <box-details summary="BIツール">
-        <p slot="name">Business Intelligence Tool</p>
-        <p slot="text">企業が保有するデータを収集・分析し、可視化することで経営判断や意思決定を支援するソフトウェア。</p>
-      </box-details>
-
-      <box-details summary="MFA">
-        <p slot="name">Multi-Factor Authentication</p>
-        <p slot="text">多要素認証の略で、ログイン時にIDとパスワードだけでなく、他の認証要素も組み合わせることでセキュリティを強化する認証方式のこと。</p>
-      </box-details>
-
       <box-details summary="AWS Glue">
         <p slot="text">データ分析、機械学習、アプリケーション開発のために、データの検出、準備、結合を簡単に実行できる、サーバーレスでスケーラブルなデータ統合サービス。</p>
       </box-details>
@@ -535,10 +524,6 @@
 
       <box-details summary="DNSフェイルオーバー">
         <p slot="text">DNSを利用して、メインサーバーに障害が発生した場合に、自動的にバックアップサーバー (予備システム) に切り替える仕組み。</p>
-      </box-details>
-
-      <box-details summary="Hadoop">
-        <p slot="text">膨大なデータを複数のマシンに分散して処理するオープンソースのソフトウェアフレームワーク。</p>
       </box-details>
 
       <box-details summary="AWS CloudTrail">
@@ -634,17 +619,6 @@
         <p slot="text">複数のAWSアカウントを一元管理するためのサービス。</p>
       </box-details>
 
-      <box-details summary="NFS">
-        <p slot="name">Network File System</p>
-        <p slot="text">ネットワーク越しにファイルを共有するための仕組み。</p>
-      </box-details>
-
-      <box-details summary="SMB ファイルサーバー">
-        <p slot="name">Server Message Block ファイルサーバー</p>
-        <p slot="text">ネットワーク上でファイルを共有するためのプロトコルと、その機能を実装したサーバーのこと。</p>
-        <p slot="text">SMB (Server Message Block) は、主にWindows環境でファイル共有に使われ、複数のPCやデバイス間でファイルを共有したり、プリンターを共有したりする際に利用される。</p>
-      </box-details>
-
       <box-details summary="Amazon GuardDuty">
         <p slot="text">脅威検出サービス。セキュリティ監視とログ分析のサービス。</p>
       </box-details>
@@ -680,8 +654,8 @@
         <p slot="text">SaaSアプリケーションとAWSサービス間のデータを安全に転送できる、フルマネージドサービス。</p>
       </box-details>
 
-      <box-details summary="AWS DMS">
-        <p slot="name">AWS Database Migration Service</p>
+      <box-details summary="AWS Database Migration Service">
+        <p slot="name">AWS DMS</p>
         <p slot="text">リレーショナルデータベース、データウェアハウス、NoSQL データベース、およびその他のタイプのデータストアを移行できるようにするクラウドサービス。</p>
       </box-details>
 
@@ -722,8 +696,8 @@
         <p slot="text">自然言語処理 (NLP) サービスで、医療テキストから情報を抽出するために機械学習を活用する。</p>
       </box-details>
 
-      <box-details summary="AWS RAM">
-        <p slot="name">AWS Resource Access Manager</p>
+      <box-details summary="AWS Resource Access Manager">
+        <p slot="name">AWS RAM</p>
         <p slot="text">AWSリソースを複数のAWSアカウントや組織単位 (OU) で共有できるサービス。</p>
         <p slot="text">VPCエンドポイントを共有することで、各VPCから特定のAWS サービス (例：S3, DynamoDB など) にプライベートアクセスを提供。</p>
       </box-details>
@@ -740,12 +714,6 @@
         <p slot="text">AWSのサービスやハイブリッドワークロードのデータを一元化してバックアップ・復元できるフルマネージドサービス。</p>
         <p slot="text">バックアップポリシーの作成や、バックアップの自動化、一元管理など、バックアップを簡単に行うための機能が備わっている。</p>
         <p slot="text">EBS、RDS、DynamoDB、EFSなど主要サービスのバックアップを一元管理でき、バックアップコピーのクロスリージョン保存やライフサイクル設定もGUI／APIで簡単に構成可能。</p>
-      </box-details>
-
-      <box-details summary="CIDR">
-        <p slot="name">Classless Inter-Domain Routing</p>
-        <p slot="text">IPアドレスをより効率的に割り当て、管理するための技術。</p>
-        <p slot="text">IPアドレスのクラス分けに縛られず、任意のビット数でネットワーク部とホスト部を区切ることで、IPアドレス空間の無駄を減らすことができる。</p>
       </box-details>
 
       <box-details summary="Amazon MQ">
@@ -767,14 +735,14 @@
         <p slot="text">インターネット接続せずにプライベート接続ができるサービス。</p>
       </box-details>
 
-      <box-details summary="AWS KMS">
-        <p slot="name">AWS Key Management Service</p>
+      <box-details summary="AWS Key Management Service">
+        <p slot="name">AWS KMS</p>
         <p slot="text">AWS上でデータの暗号化に使用するキーを管理するためのサービス。</p>
         <p slot="text">このサービスを利用することで、キーの作成、保管、使用、無効化、削除などの操作を安全かつ効率的に行うことができる。また、他のAWSサービスと連携して、データの暗号化を管理することも可能。</p>
       </box-details>
 
-      <box-details summary="SCP">
-        <p slot="name">Service Control Policy</p>
+      <box-details summary="Service Control Policy">
+        <p slot="name">SCP</p>
         <p slot="text">組織単位 (OU) またはAWS全体の組織に対して設定できるポリシー。</p>
         <p slot="text">SCPは、組織内のすべてのアカウントに適用されるアクセス許可の上限を設定するために使用される。これにより、リソースアクセスの一元管理が可能になり、セキュリティの標準化が実現する。</p>
         <p slot="text">特定のサービスやアクションへのアクセスを組織全体で制限するには、ルート組織単位にSCPを作成する必要がある。</p>
@@ -801,8 +769,8 @@
         <p slot="text">リアルタイムSQLクエリによる分析・異常検知が可能。</p>
       </box-details>
 
-      <box-details summary="AMP">
-        <p slot="name">Amazon Managed Service for Prometheus</p>
+      <box-details summary="Amazon Managed Service for Prometheus">
+        <p slot="name">AMP</p>
         <p slot="text">Prometheus (プロメテウス) 互換のメトリクスを扱うためのフルマネージドなサービスです。大規模なコンテナ環境のモニタリングを容易にし、運用コストと手間を削減できる。</p>
         <p slot="text">コンテナ環境のメトリクスを収集し、スケーラブルな監視を提供するマネージドサービス。</p>
         <p slot="text">Prometheusは、Kubernetesなどのコンテナオーケストレーション環境で利用されるオープンソースのモニタリングシステムであり、Amazon Managed Service for Prometheusは、Prometheusのフルマネージドな実装を提供する。これにより、開発者はスケーラブルなメトリクス収集と可視化を容易に実装でき、運用負担を軽減できる。</p>
@@ -852,8 +820,8 @@
         <p slot="text">ソフトウェアライセンスの使用状況を追跡し、管理することで、コストの最適化とコンプライアンスの維持を支援するサービス。</p>
       </box-details>
 
-      <box-details summary="AWS ADS">
-        <p slot="name">AWS Application Discovery Service</p>
+      <box-details summary="AWS Application Discovery Service">
+        <p slot="name">AWS ADS</p>
         <p slot="text">企業がオンプレミスのデータセンターからAWSへの移行を計画する際に、アプリケーションの依存関係を識別し、移行計画を支援するために使用。</p>
         <p slot="text">オンプレミス環境のサーバーやデータベースの設定、使用状況、パフォーマンスなどの情報を収集・分析し、AWSクラウドへの移行を計画するのに役立つサービス。</p>
       </box-details>
@@ -881,8 +849,8 @@
         <p slot="text">AWSのインフラストラクチャ、サービス、API、ツールをオンプレミス環境に拡張できるフルマネージドサービス。</p>
       </box-details>
 
-      <box-details summary="Amazon MSK">
-        <p slot="name">Amazon Managed Streaming for Apache Kafka</p>
+      <box-details summary="Amazon Managed Streaming for Apache Kafka">
+        <p slot="name">Amazon MSK</p>
         <p slot="text">Apache Kafkaのクラスターを簡単に設定、運用、スケールアウトできるマネージドサービス。</p>
         <p slot="text">「データの自動レプリケーションを複数のAZにわたって有効化」はデータの耐久性と可用性を最大化する最適な方法。</p>
       </box-details>
@@ -932,8 +900,7 @@
         <p slot="text">動画や音声ファイルを、様々なデバイス (スマートフォン、タブレット、PCなど) で再生可能な形式に変換するAWSのクラウドサービス。</p>
       </box-details>
 
-      <box-details summary="Amazon AFD">
-        <p slot="name">Amazon Fraud Detector</p>
+      <box-details summary="Amazon Fraud Detector">
         <p slot="text">オンラインでの不正行為を自動的に検知するマネージドサービス。不正行為を検出するために機械学習モデルを使用。</p>
       </box-details>
 
@@ -946,8 +913,8 @@
         <p slot="text">Apache Cassandra (カサンドラ) NoSQLデータベースと互換性があり、スケーラブルで可用性の高いデータベース。</p>
       </box-details>
 
-      <box-details summary="AWS MGN">
-        <p slot="name">AWS Application Migration Service</p>
+      <box-details summary="AWS Application Migration Service">
+        <p slot="name">AWS MGN</p>
         <p slot="text">オンプレミス環境や仮想環境、パブリッククラウドからAWSへのアプリケーション移行をサポートするサービス。</p>
       </box-details>
 
@@ -961,10 +928,6 @@
 
       <box-details summary="AWS Control Tower">
         <p slot="text">AWS環境のセットアップ、ガバナンス、コンプライアンスを簡単に管理できるサービス。</p>
-      </box-details>
-
-      <box-details summary="DevOps">
-        <p slot="text">開発 (Development) と運用 (Operations) を組み合わせた言葉で、ソフトウェア開発とIT運用を連携させ、効率的かつ迅速なシステム開発・提供を目指すための考え方や手法、文化のこと。</p>
       </box-details>
 
       <box-details summary="AWS Managed IPSec VPN">
@@ -997,8 +960,8 @@
         <p slot="text">ChefやPuppetといった構成管理ツールを活用し、サーバーの構成やアプリケーションのデプロイ、スケーリング、保守などを自動化できる。</p>
       </box-details>
 
-      <box-details summary="Amazon SWF">
-        <p slot="name">Amazon Simple Workflow Service</p>
+      <box-details summary="Amazon Simple Workflow Service">
+        <p slot="name">Amazon SWF</p>
         <p slot="text">AWSが提供するワークフロー管理サービス。複数のサーバーで実行される処理の連携を管理するためのサービス。</p>
         <p slot="text">これは、複数サーバー間で実行されるアプリケーションのプロセスを管理し、タスクの順番や振り分けを自動的に制御するのに役立つ。</p>
       </box-details>
@@ -1016,8 +979,8 @@
         <p slot="text">機械学習 (ML) を活用したフルマネージド型の時系列予測サービス。</p>
       </box-details>
 
-      <box-details summary="SCP">
-        <p slot="name">Service Control Policy</p>
+      <box-details summary="Service Control Policy">
+        <p slot="name">SCP</p>
         <p slot="text">組織のアクセス許可の管理に使用できる組織ポリシーの一種。 SCPでは、組織のIAMユーザーとIAMロールで使用可能な最大アクセス許可を一元的に制御できる。</p>
       </box-details>
 
@@ -1026,8 +989,8 @@
         <p slot="text">IT管理者が承認された製品 (AWSリソース、例えばEC2インスタンスやRDSデータベースなど) をまとめて管理し、ユーザーが必要な製品を簡単に起動できるポータルを提供する。</p>
       </box-details>
 
-      <box-details summary="Amazon ES">
-        <p slot="name">Amazon Elasticsearch Service</p>
+      <box-details summary="Amazon Elasticsearch Service">
+        <p slot="name">Amazon ES</p>
         <p slot="text">Elasticsearchクラスターを簡単にデプロイ、運用、スケールできるフルマネージドサービス。</p>
         <p slot="text">ElasticsearchとはApache Luceneを基盤として構築された分散検索/分析エンジン。</p>
       </box-details>
@@ -1036,12 +999,56 @@
         <p slot="text">アプリケーションのデプロイメントを自動化するためのAWSのマネージドサービス。</p>
         <p slot="text">Amazon EC2、オンプレミス、Lambda関数、Amazon ECSなどの様々な環境に、アプリケーションを迅速かつ安全にデプロイできる。</p>
       </box-details>
+    </section>
+
+    <section class="inner">
+      <h2>その他</h2>
+
+      <box-details summary="スティッキーセッション">
+        <p slot="text">特定のクライアントからのリクエストが同じサーバーインスタンスに転送されるように設定するもの。</p>
+      </box-details>
+
+      <box-details summary="LDAP">
+        <p slot="name">Lightweight Directory Access Protocol</p>
+        <p slot="text">エルダップ。ネットワーク内でユーザー、グループ、コンピュータなどの情報を一元管理するための標準プロトコル。</p>
+        <p slot="text">ディレクトリサービスと呼ばれる情報データベースにアクセスし、認証やアクセス制御、リソースの検索を行うための基盤として広く利用されている。</p>
+      </box-details>
+
+      <box-details summary="BIツール">
+        <p slot="name">Business Intelligence Tool</p>
+        <p slot="text">企業が保有するデータを収集・分析し、可視化することで経営判断や意思決定を支援するソフトウェア。</p>
+      </box-details>
+
+      <box-details summary="MFA">
+        <p slot="name">Multi-Factor Authentication</p>
+        <p slot="text">多要素認証の略で、ログイン時にIDとパスワードだけでなく、他の認証要素も組み合わせることでセキュリティを強化する認証方式のこと。</p>
+      </box-details>
+
+      <box-details summary="Hadoop">
+        <p slot="text">膨大なデータを複数のマシンに分散して処理するオープンソースのソフトウェアフレームワーク。</p>
+      </box-details>
+
+      <box-details summary="SMB ファイルサーバー">
+        <p slot="name">Server Message Block ファイルサーバー</p>
+        <p slot="text">ネットワーク上でファイルを共有するためのプロトコルと、その機能を実装したサーバーのこと。</p>
+        <p slot="text">SMB (Server Message Block) は、主にWindows環境でファイル共有に使われ、複数のPCやデバイス間でファイルを共有したり、プリンターを共有したりする際に利用される。</p>
+      </box-details>
+
+      <box-details summary="CIDR">
+        <p slot="name">Classless Inter-Domain Routing</p>
+        <p slot="text">IPアドレスをより効率的に割り当て、管理するための技術。</p>
+        <p slot="text">IPアドレスのクラス分けに縛られず、任意のビット数でネットワーク部とホスト部を区切ることで、IPアドレス空間の無駄を減らすことができる。</p>
+      </box-details>
+
+      <box-details summary="DevOps">
+        <p slot="text">開発 (Development) と運用 (Operations) を組み合わせた言葉で、ソフトウェア開発とIT運用を連携させ、効率的かつ迅速なシステム開発・提供を目指すための考え方や手法、文化のこと。</p>
+      </box-details>
 
       <box-details summary="バスチョンホスト">
         <p slot="text">外部からのアクセスを制限されたネットワーク (通常はDMZ) に配置され、内部ネットワークへのアクセスを中継するセキュリティで保護されたサーバーのこと。</p>
         <p slot="text">要塞ホストとも呼ばれ、踏み台サーバーの一種として機能。</p>
       </box-details>
-    </div>
+    </section>
   </div>
 
   <script>
